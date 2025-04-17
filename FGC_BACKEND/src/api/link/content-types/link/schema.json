@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "links",
+  "info": {
+    "singularName": "link",
+    "pluralName": "links",
+    "displayName": "Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Sunday_Service_Link": {
+      "type": "string"
+    }
+  }
+}
