@@ -3,51 +3,38 @@
     text="ABOUT US"
     backgroundURL="src/assets/images/background.jpg"
   />
-  <!-- Buttons for remaining links -->
-  <section
-    class="min-h-[50vh] flex justify-center flex-col"
-    id="buttons_section"
+
+  <Splide
+      class="px-10 pb-10 bg-black flex justify-center"
+      :options="{
+      type: 'loop',
+      perPage: 3,
+      rewind: true,
+      autoplay: true,
+      gap: '1rem',
+      interval: 3000,
+      pauseOnHover: false,
+      breakpoints: {
+        1024: { perPage: 3 },
+        768: { perPage: 2 },
+        600: { perPage: 1 },
+      },
+    }"
+      :tag="'section'"
+      aria-label="My Favorite Images"
   >
-    <div class="grid grid-col-1 py-4 gap-2 place-items-center">
-      <CustomButton text="Our History" link="#" @click="scrollToSection(0)" />
-      <CustomButton
-        text="Our Doctrine"
-        color="black"
-        background="white"
-        link="#"
-        @click="scrollToSection(1)"
-      />
-      <CustomButton text="Our Belief" link="#" @click="scrollToSection(2)" />
-      <CustomButton
-        text="Our Leadership"
-        color="black"
-        background="white"
-        link="#"
-      />
-    </div>
-  </section>
-  <section
-    class="bg-black text-white relative px-10 pt-10 pb-10 min-h-screen grid grid-cols-1 md:grid-cols-2 md:place-items-center md:gap-4"
-    id="targetSection"
-  >
-    <!-- GO BACK UP -->
-    <div class="fixed bottom-10 right-4 bg-purple-600 rounded-xl p-2" @click="scrollToButtonSection">
-      <FontAwesomeIcon
-        :icon="['fas', 'arrow-up']"
-        class="text-black text-2xl"
-      />
-    </div>
-    <!-- TEXT AND IMAGE -->
-    <div>
-      <img :src="displayedInformation.imageURL" class="rounded-md" />
-    </div>
-    <div class="mt-5">
-      <h1 class="font-bold text-xl mb-1 uppercase">
-        {{ displayedInformation.title }}
-      </h1>
-      <p class="mb-2 leading-relaxed">{{ displayedInformation.body }}</p>
-    </div>
-  </section>
+    <SplideSlide v-for="(about, index) in aboutInformation" :key="about.id">
+      <div>
+        <img :src="about.imageURL" class="rounded-md" />
+      </div>
+      <div class="mt-5">
+        <h1 class="font-bold text-xl mb-1 uppercase">
+          {{ about.title }}
+        </h1>
+        <p class="mb-2 leading-relaxed">{{ about.body }}</p>
+      </div>
+    </SplideSlide>
+  </Splide>
 </template>
 
 <script setup>
@@ -77,16 +64,5 @@ const aboutInformation = [
     imageURL: "src/assets/images/Locator.jpg",
   },
 ];
-var displayedInformation = ref(aboutInformation[0]);
 
-const scrollToSection = (index) => {
-  displayedInformation.value = aboutInformation[index];
-  const element = document.getElementById("targetSection");
-  element.scrollIntoView({ behavior: "smooth" });
-};
-
-const scrollToButtonSection = () => {
-  const element = document.getElementById("buttons_section");
-  element.scrollIntoView({ behavior: "smooth" });
-};
-</script>
+<script>

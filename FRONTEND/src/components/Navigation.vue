@@ -1,7 +1,7 @@
 <template>
   <nav
-    :class="[fixNav ? '!pt-3 !pb-3 fixed z-200 bg-black/50' : '']"
-    class="bg-black text-lg text-white top-0 right-0 left-0 flex justify-between lg:justify-around px-8 py-7 lg:py-5 items-center"
+    :class="[fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 lg:bg-black' : '']"
+    class="bg-black text-lg lg:fixed lg:z-500 text-white top-0 right-0 left-0 flex justify-between lg:justify-around px-8 py-7 lg:py-5 items-center"
   >
     <!-- Logo Container -->
     <RouterLink
@@ -28,7 +28,7 @@
 
     <!-- Navigation Links -->
     <ul
-      class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-scroll transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:text-white lg:w-fit lg:relative lg:justify-around"
+      class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-scroll lg:overflow-y-hidden transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:text-white lg:w-fit lg:relative lg:justify-around"
       :class="[openMenu ? 'translate-x-0' : 'translate-x-[100%]']"
     >
       <!-- CLOSE ICON -->
