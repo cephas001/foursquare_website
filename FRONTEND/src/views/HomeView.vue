@@ -20,8 +20,8 @@
         every Sunday
       </h1>
       <div class="flex flex-col md:flex-row mt-4">
-        <CustomButton text="Plan your visit" link="/" />
-        <CustomButton text="Join Online" color="black" background="white" :hasIcon="true" :iconClass="['fas', 'video']" link="/" />        
+        <CustomButton text="Plan your visit" link="/contact" />
+        <CustomButton text="Join Online" color="black" background="white" :hasIcon="true" :iconClass="['fas', 'video']" link="#" @click="redirectYoutube" />        
       </div>
     </div>
   </section>
@@ -77,8 +77,8 @@
       </p>
     </div>
     <div class="flex flex-col md:flex-row lg:w-1/2 lg:mx-auto">
-      <CustomButton text="Previous messages" letterSpacing="wider" link="/" />
-      <CustomButton text="Watch on demand" background="white" color="black" bold="semibold" link="/" letterSpacing="wider" />
+      <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
+      <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
     </div>
   </section>
 
@@ -140,6 +140,10 @@ import Resource from "../components/Resource.vue";
 import CustomButton from "../components/CustomButton.vue";
 
 const pictures = [{ src: "src/assets/images/Locator.jpg", alt: "Image 1" }];
+
+const redirectYoutube = () => {
+  window.location.href = "https://www.youtube.com/@fgcikate/videos";
+}
 
 const activities = ref([
   {

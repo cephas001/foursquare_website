@@ -36,7 +36,6 @@
 </template>
 
 <script setup>
-import CustomButton from "../../components/CustomButton.vue";
 import { computed } from "vue";
 
 const aboutInformation = [
