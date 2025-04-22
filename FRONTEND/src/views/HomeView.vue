@@ -5,7 +5,7 @@
   />
 
   <section
-    class="p-10 md:h-[40vh] flex flex-col lg:items-center md:items-center justify-center md:flex-row lg:flex-row"
+    class="p-10 flex flex-col lg:items-center md:items-center justify-center md:flex-row lg:flex-row"
   >
     <div class="text-4xl lg:text-6xl lg:mr-4 md:mr-3">
       <h1 class="font-winky font-extrabold italic">

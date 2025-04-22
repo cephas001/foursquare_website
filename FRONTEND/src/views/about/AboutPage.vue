@@ -3,46 +3,42 @@
     text="ABOUT US"
     backgroundURL="src/assets/images/background.jpg"
   />
-
-  <Splide
-      class="px-10 pb-10 bg-black flex justify-center"
-      :options="{
-      type: 'loop',
-      perPage: 3,
-      rewind: true,
-      autoplay: true,
-      gap: '1rem',
-      interval: 3000,
-      pauseOnHover: false,
-      breakpoints: {
-        1024: { perPage: 3 },
-        768: { perPage: 2 },
-        600: { perPage: 1 },
-      },
-    }"
-      :tag="'section'"
-      aria-label="My Favorite Images"
-  >
-    <SplideSlide v-for="(about, index) in aboutInformation" :key="about.id">
-      <div>
-        <img :src="about.imageURL" class="rounded-md" />
-      </div>
-      <div class="mt-5">
-        <h1 class="font-bold text-xl mb-1 uppercase">
-          {{ about.title }}
-        </h1>
-        <p class="mb-2 leading-relaxed">{{ about.body }}</p>
-      </div>
-    </SplideSlide>
-  </Splide>
+  <section class="bg-black flex justify-center text-white">
+    <Splide
+        class="px-10 py-10 md:w-[70%] md:m-auto"
+        :options="{
+        type: 'loop',
+        perPage: 1,
+        rewind: true,
+        autoplay: true,
+        gap: '1rem',
+        interval: 3000,
+        pauseOnHover: false,
+      }"
+        :tag="'section'"
+        aria-label="My Favorite Images"
+    >
+      <SplideSlide v-for="(about, index) in aboutInformation" :key="about.id" >
+        <div class="grid grid-cols-1 place-items-center">
+          <div>
+            <img :src="about.imageURL" class="rounded-md" />
+          </div>
+          <div class="mt-5">
+            <h1 class="font-bold text-xl mb-1 uppercase">
+              {{ about.title }}
+            </h1>
+            <p class="mb-2 leading-relaxed">{{ about.body }}</p>
+          </div>
+        </div>
+      </SplideSlide>
+    </Splide>
+  </section>
 </template>
 
 <script setup>
 import HeroSection from "../../components/HeroSection.vue";
 import CustomButton from "../../components/CustomButton.vue";
-import { ref, computed } from "vue";
-
-var currentIndex = ref(0);
+import { computed } from "vue";
 
 const aboutInformation = [
   {
@@ -64,5 +60,4 @@ const aboutInformation = [
     imageURL: "src/assets/images/Locator.jpg",
   },
 ];
-
-<script>
+</script>

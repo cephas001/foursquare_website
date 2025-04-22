@@ -29,5 +29,4 @@ const props = defineProps({
     type: String,
   },
 });
-console.log(props.backgroundURL)
 </script>
