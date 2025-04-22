@@ -10,6 +10,8 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+import HeroSection from "./components/HeroSection.vue";
+import CustomButton from "./components/CustomButton.vue";
 import VueSplide from '@splidejs/vue-splide';
 
 const pinia = createPinia();
@@ -20,6 +22,8 @@ library.add(fab);
 
 app.use(pinia);
 app.use(router);
-app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.use(VueSplide);
+app.component("FontAwesomeIcon", FontAwesomeIcon);
+app.component("HeroSection", HeroSection);
+app.component("CustomButton", CustomButton);
 app.mount("#app");

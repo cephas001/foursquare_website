@@ -22,9 +22,9 @@
       class="bg-gray-100 lg:bg-white transition-all duration-500 ease-in-out lg:absolute left-0 right-0 top-7 w-full lg:w-fit lg:rounded-b-xl lg:border"
       :class="[about_clicked ? 'block' : 'hidden']"
     >
-      <DropDownLink :link="'/history'" :linkText="'History'" />
-      <DropDownLink :link="'/doctrine'" :linkText="'Doctrine'" />
-      <DropDownLink :link="'/belief'" :linkText="'Belief'" />
+      <DropDownLink :link="'/about'" :linkText="'History'" />
+      <DropDownLink :link="'/about'" :linkText="'Doctrine'" />
+      <DropDownLink :link="'/about'" :linkText="'Belief'" />
       <DropDownLink :link="'/leadership'" :linkText="'Leadership'" />
     </ol>
 

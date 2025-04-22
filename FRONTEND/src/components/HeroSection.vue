@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="`h-[70vh] lg:h-[60vh]  mt-[-2px] relative bg-[url('${backgroundURL}')] bg-cover bg-top lg:bg-center bg-fixed lg:bg-scroll`"
+    :class="`h-[70vh] lg:h-[60vh]  mt-[-2px] relative bg-[url('src/assets/images/Locator.jpg')] bg-cover bg-top lg:bg-center bg-fixed lg:bg-scroll`"
   >
     <div class="relative h-full overflow-hidden">
       <div class="absolute inset-0 -translate-y-0 z-50 md:w-[70%] md:mx-auto">
@@ -19,7 +19,6 @@
 
 <script setup>
 import { computed } from "vue";
-const check = ""
 const props = defineProps({
   text: {
     type: String,

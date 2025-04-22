@@ -1,7 +1,7 @@
 <template>
   <HeroSection
     text="Foursquare Gospel Church Ikate"
-    backgroundURL="src/assets/images/background.jpg"
+    backgroundURL="src/assets/images/Banner-1.png"
   />
 
   <section
@@ -135,7 +135,6 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
-import HeroSection from "../components/HeroSection.vue";
 import Card from "../components/Card.vue";
 import Resource from "../components/Resource.vue";
 import CustomButton from "../components/CustomButton.vue";

@@ -36,7 +36,6 @@
 </template>
 
 <script setup>
-import HeroSection from "../../components/HeroSection.vue";
 import CustomButton from "../../components/CustomButton.vue";
 import { computed } from "vue";
 

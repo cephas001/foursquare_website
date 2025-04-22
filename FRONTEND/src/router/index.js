@@ -14,9 +14,6 @@ import AboutPage from "../views/about/AboutPage.vue";
 const routes = [
   { path: "/", component: HomeView },
   { path: "/contact", component: ContactPage },
-  { path: "/belief", component: BeliefPage },
-  { path: "/doctrine", component: DoctrinePage },
-  { path: "/history", component: HistoryPage },
   { path: "/leadership", component: LeadershipPage },
   { path: "/gallery", component: ImageGallery },
   { path: "/igfeed", component: InstagramFeed },
