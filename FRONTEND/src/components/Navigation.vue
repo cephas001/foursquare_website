@@ -1,13 +1,13 @@
 <template>
   <nav
-    :class="[fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 lg:bg-black' : '']"
+    :class="[NavBarStore.fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 lg:bg-black' : '']"
     class="bg-black text-lg w-[100%] lg:fixed lg:z-500 text-white top-0 right-0 left-0 flex justify-around px-8 py-7 lg:py-5 items-center"
   >
     <!-- Logo Container -->
     <RouterLink
       :to="'/'"
       class="flex items-center"
-      :class="[fixNav ? 'invisible lg:visible' : '']"
+      :class="[NavBarStore.fixNav ? 'invisible lg:visible' : '']"
     >
       <img
         src="../assets/images/foursquare-logo.png"
@@ -22,19 +22,19 @@
       <FontAwesomeIcon
         :icon="['fas', 'bars']"
         class="text-2xl cursor-pointer"
-        @click="openMenu = true"
+        @click="NavBarStore.openMenu = true"
       />
     </div>
 
     <!-- Navigation Links -->
     <ul
       class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-scroll lg:overflow-y-hidden transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:text-white lg:w-fit lg:relative lg:justify-around"
-      :class="[openMenu ? 'translate-x-0' : 'translate-x-[100%]']"
+      :class="[NavBarStore.openMenu ? 'translate-x-0' : 'translate-x-[100%]']"
     >
       <!-- CLOSE ICON -->
       <FontAwesomeIcon
         :icon="['fas', 'xmark']"
-        @click="openMenu = false"
+        @click="NavBarStore.openMenu = false"
         class="lg:invisible absolute top-7 right-7 text-2xl cursor-pointer"
       />
       <div class="mt-7 lg:hidden"></div>
@@ -57,18 +57,20 @@
 </template>
 
 <script setup>
+import { useNavBarStore } from "../store/navBarStore";
+
+const NavBarStore = useNavBarStore();
+
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import NavLink from "./NavLink.vue";
-var openMenu = ref(false);
-var fixNav = ref(false);
 
 window.addEventListener("scroll", (e) => {
-  openMenu.value = false;
+  NavBarStore.openMenu = false;
   if (window.scrollY == 0) {
-    fixNav.value = false;
+    NavBarStore.fixNav = false;
   } else {
-    fixNav.value = true;
+    NavBarStore.fixNav = true;
   }
 });
 </script>

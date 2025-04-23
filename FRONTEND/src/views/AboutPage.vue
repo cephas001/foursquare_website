@@ -1,8 +1,9 @@
 <template>
   <HeroSection
-    text="find out more"
     backgroundURL="src/assets/images/background.jpg"
-  />
+  >
+    <p :class="$classStore.class" class="font-bold">Faith. Grace. Community. <br> Welcome to FGC Ikate.</p>
+  </HeroSection>
   <section class="flex justify-center">
     <Splide
         class="px-10 py-10 md:w-[80%] md:m-auto"

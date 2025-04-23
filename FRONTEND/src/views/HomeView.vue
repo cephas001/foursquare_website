@@ -1,9 +1,8 @@
 <template>
   <HeroSection
-    text=""
     backgroundURL="src/assets/images/Banner-1.png"
   >
-    <h1 :class="$classStore.class">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
+    <h1 :class="$classStore.class" class="font-extrabold tracking-wider">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
   </HeroSection>
 
   <section
