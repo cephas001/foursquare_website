@@ -2,7 +2,7 @@
   <HeroSection
     backgroundURL="src/assets/images/background.jpg"
   >
-    <p :class="$classStore.class" class="">Faith. Grace. Community. <br> Welcome to FGC Ikate.</p>
+    <p :class="$classStore.class" class="font-bold uppercase">Welcome to <br> FGC Ikate.</p>
   </HeroSection>
   
   <section class="p-10">
