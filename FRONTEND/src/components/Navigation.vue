@@ -18,7 +18,7 @@
     </RouterLink>
 
     <!-- Open Menu Container -->
-    <div class="flex items-center lg:hidden">
+    <div class="flex items-center lg:hidden" ref="menuButtonRef">
       <FontAwesomeIcon
         :icon="['fas', 'bars']"
         class="text-2xl cursor-pointer"
@@ -30,6 +30,8 @@
     <ul
       class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-scroll lg:overflow-y-hidden transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:text-white lg:w-fit lg:relative lg:justify-around"
       :class="[NavBarStore.openMenu ? 'translate-x-0' : 'translate-x-[100%]']"
+      @click.self="NavBarStore.openMenu = false"
+      ref="menuRef"
     >
       <!-- CLOSE ICON -->
       <FontAwesomeIcon
@@ -61,9 +63,28 @@ import { useNavBarStore } from "../store/navBarStore";
 
 const NavBarStore = useNavBarStore();
 
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { RouterLink } from "vue-router";
 import NavLink from "./NavLink.vue";
+
+const menuRef = ref(null);
+const menuButtonRef = ref(null); 
+
+const handleClickOutside = (event) => {
+  if (menuRef.value && 
+    menuButtonRef.value && !menuRef.value.contains(event.target) &&
+    !menuButtonRef.value.contains(event.target)) {
+   NavBarStore.openMenu = false; // Close the menu
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
 
 window.addEventListener("scroll", (e) => {
   NavBarStore.openMenu = false;
