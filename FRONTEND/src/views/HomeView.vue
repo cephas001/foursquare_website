@@ -1,8 +1,10 @@
 <template>
   <HeroSection
-    text="Foursquare Gospel Church Ikate"
+    text=""
     backgroundURL="src/assets/images/Banner-1.png"
-  />
+  >
+    <h1 :class="$classStore.class">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
+  </HeroSection>
 
   <section
     class="p-10 flex flex-col lg:items-center md:items-center justify-center md:flex-row lg:flex-row"
@@ -142,7 +144,7 @@ import CustomButton from "../components/CustomButton.vue";
 const pictures = [{ src: "src/assets/images/Locator.jpg", alt: "Image 1" }];
 
 const redirectYoutube = () => {
-  window.location.href = "https://www.youtube.com/@fgcikate/videos";
+  window.open("https://www.youtube.com/@fgcikate/videos", "_blank");
 }
 
 const activities = ref([

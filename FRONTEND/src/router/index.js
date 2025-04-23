@@ -16,10 +16,6 @@ const routes = [
   { path: "/igfeed", component: InstagramFeed },
   { path: "/give", component: GivePage },
   { path: "/about", component: AboutPage },
-  {
-    path: '/youtube',
-    redirect: () => "https://www.youtube.com/@fgcikate/videos"
-  }
 ];
 
 const router = createRouter({
