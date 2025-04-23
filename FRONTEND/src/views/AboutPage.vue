@@ -7,7 +7,7 @@
   
   <section class="p-10">
     <p class="text-gray-400 mb-1 md:text-center">Welcome to FGC Ikate</p>
-    <iframe class="w-full md:w-[70%] md:mx-auto" height="315" src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="w-full md:w-[70%] md:mx-auto" height="400" src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </section>
 
   <section class="px-10 pb-10 md:w-[80%] md:mx-auto">
@@ -21,7 +21,8 @@
           <h1 :class="[aboutPart.show ? 'border-b-gray-400 border-b-1' : 'border-b-transparent transition-all ease-in-out', 'my-5 flex items-center text-lg pb-2 uppercase tracking-widest cursor-pointer']" @click="aboutPart.show = !aboutPart.show">
             <FontAwesomeIcon
               :icon="['fas', 'caret-right']"
-              class="cursor-pointer mr-2 text-xl"
+              :class="[aboutPart.show ? 'rotate-90' : '']"
+              class="cursor-pointer mr-2 text-xl transition-all ease-in-out"
             />
             {{ aboutPart.title }}
           </h1>
@@ -47,7 +48,7 @@ const aboutInformation = ref([
     title: "Our Tenets of Faith",
     body: "The 22 Tenets of Faith of The Foursquare Church outline core Christian beliefs, emphasizing the authority of the Bible, salvation through Jesus Christ, the power of the Holy Spirit, divine healing, and the promise of Christ’s return. These tenets serve as a foundation for faith, guiding believers in worship, service, and spiritual growth.",
     externalLink: "https://foursquare.org.ng/belief",
-    show: false
+    show: true
   },
   {
     id: 2,
