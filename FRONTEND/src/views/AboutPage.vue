@@ -6,7 +6,7 @@
   </HeroSection>
   <section class="flex justify-center">
     <Splide
-        class="px-10 py-10 md:w-[80%] md:m-auto"
+        class="px-10 py-10 md:w-[80%] lg:w-[90%] md:m-auto"
         :options="{
         type: 'loop',
         perPage: 1,
