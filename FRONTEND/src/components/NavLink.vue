@@ -10,23 +10,9 @@
       <FontAwesomeIcon
         class="lg:!hidden mr-4 mb-1"
         v-if="showIcon"
-        :icon="
-          !about_clicked && !media_clicked ? ['fas', 'plus'] : ['fas', 'minus']
-        "
+        :icon="!media_clicked ? ['fas', 'plus'] : ['fas', 'minus']"
       />
-      
     </div>
-    
-    <ol
-      v-if="linkText == 'About'"
-      class="bg-gray-100 lg:bg-white transition-all duration-500 ease-in-out lg:absolute left-0 right-0 top-7 w-full lg:w-fit lg:rounded-b-xl lg:border"
-      :class="[about_clicked ? 'block' : 'hidden']"
-    >
-      <DropDownLink :link="'/about'" :linkText="'History'" />
-      <DropDownLink :link="'/about'" :linkText="'Doctrine'" />
-      <DropDownLink :link="'/about'" :linkText="'Belief'" />
-      <DropDownLink :link="'/leadership'" :linkText="'Leadership'" />
-    </ol>
 
     <ol
       v-if="linkText == 'Media'"
@@ -58,17 +44,11 @@ const props = defineProps({
     type: Boolean,
   },
 });
-
-var about_clicked = ref(false);
 var media_clicked = ref(false);
 
 const checkAndUpdate = (text) => {
-  if (text == "About") {
-    about_clicked.value = !about_clicked.value;
-  } else {
-    if (text == "Media") {
-      media_clicked.value = !media_clicked.value;
-    }
+  if (text == "Media") {
+    media_clicked.value = !media_clicked.value;
   }
 };
 </script>
