@@ -6,6 +6,7 @@ import LeadershipPage from "../views/LeadershipPage.vue";
 import ImageGallery from "../views/media/ImageGallery.vue";
 import InstagramFeed from "../views/media/InstagramFeed.vue";
 import GivePage from "../views/GivePage.vue";
+import NotFound from "../views/NotFound.vue"
 import AboutPage from "../views/AboutPage.vue";
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
   { path: "/igfeed", component: InstagramFeed },
   { path: "/give", component: GivePage },
   { path: "/about", component: AboutPage },
+  { path: "/:pathMatch(.*)*", component: NotFound}
 ];
 
 const router = createRouter({
