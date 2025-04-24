@@ -4,7 +4,6 @@
 			<FontAwesomeIcon
 				class="text-purple-700 text-5xl animate-bounce"
         		:icon="['fas', 'exclamation-triangle']"
-
       		/>
 			Sorry, the page you are looking for does not exist.
 		</h1>
