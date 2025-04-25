@@ -20,8 +20,6 @@
       :class="[media_clicked ? 'block' : 'hidden']"
     >
       <DropDownLink :link="'/gallery'" :linkText="'Gallery'" />
-      <DropDownLink :link="'/'" :linkText="'Youtube'" />
-      <DropDownLink :link="'/'" :linkText="'Instagram Feed'" />
     </ol>
   </li>
 </template>

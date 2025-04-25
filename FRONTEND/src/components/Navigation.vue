@@ -54,6 +54,18 @@
 
       <!-- GIVE LINK -->
       <NavLink :link="'/give'" :linkText="'Give'" />
+
+      <div class="lg:hidden flex absolute bottom-5 right-5 items-center text-4xl mb-4 transition-all duration-1000" :class="[NavBarStore.openMenu ? 'translate-x-0' : 'translate-x-[100%]']">
+        <RouterLink to="/" @click="redirectFacebook">
+          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-4 cursor-pointer focus:text-purple-900" />
+        </RouterLink>
+        <RouterLink to="/" @click="redirectInstagram">
+          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-4 cursor-pointer focus:text-purple-900" />
+        </RouterLink>
+        <RouterLink to="/" @click="redirectYoutube">
+          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer focus:text-purple-900" />
+        </RouterLink>
+      </div>
     </ul>
   </nav>
 </template>
@@ -77,6 +89,16 @@ const handleClickOutside = (event) => {
    NavBarStore.openMenu = false; // Close the menu
   }
 };
+
+const redirectYoutube = () => {
+  window.open("https://www.youtube.com/@fgcikate/videos", "_blank");
+}
+const redirectInstagram = () => {
+  window.open("https://www.instagram.com/foursquare.ikate/", "_blank");
+}
+const redirectFacebook = () => {
+  window.open("https://www.facebook.com/foursqr.ikate", "_blank");
+}
 
 onMounted(() => {
   document.addEventListener("click", handleClickOutside);
