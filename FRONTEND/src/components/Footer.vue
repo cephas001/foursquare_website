@@ -1,50 +1,52 @@
 <template>
-    <footer class="bg-black border-t-4 border-t-white text-white w-full pt-20 px-10 pb-10 font-mono">
-      <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-flow-dense">
-        <img src="../assets/images/footer-logo.png" alt="FOOTER LOGO" class="w-[200px] mb-3" />
-  
-        <h1 class="text-md mb-4">
-          Foursquare Gospel Church Ikate <br />
-          Citadel of Praise
-        </h1>
-        <h1 class="text-md mb-4">
-          4, Kusenla Road, <br />
-          By Conoil Filling Station,<br />
-          Ikate, Lekki, <br />
-          Lagos State, Nigeria. <br />
-          08112985079 <br />
-          07042090002 (SMS & WhatsApp Only)
-        </h1>
-        <div class="flex items-center text-3xl mb-4">
-          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-4 cursor-pointer hover:text-purple-900" />
-          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-4 cursor-pointer hover:text-purple-900" />
-          <FontAwesomeIcon :icon="['fab', 'square-x-twitter']" class="mr-4 cursor-pointer hover:text-purple-900" />
-          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer hover:text-purple-900" />
+    <footer class="bg-black border-t-4 border-t-white text-white w-full pt-15 pb-5 px-10 font-mono">
+      <div class="flex flex-col md:flex-row md:w-fit md:mx-auto md:justify-around lg:justify-evenly gap-4 md:gap-6 md:items-center">
+        <div class="lg:mr-5">
+          <img src="../assets/images/footer-logo.png" alt="FOOTER LOGO" class="w-[180px] mb-4" />
+          <h1 class="mb-4">
+            Foursquare Gospel Church Ikate <br />
+            Citadel of Praise
+          </h1>
+          <a href="https://maps.app.goo.gl/VGbodYxJ3o6cYx387">
+            4, Kusenla Road, <br />
+            By Conoil Filling Station,<br />
+            Ikate, Lagos. <br />
+          </a>
+          <h1 class="mt-4">
+            <a href="tel:+2348112985079" class="hover:text-purple-700 focus:text-purple-700">Tel: +234 811 298 5079</a><br />
+          </h1>
         </div>
-  
-        <div class="quick-links">
-          <h2 class="mb-1 font-bold text-purple-900 uppercase">Quick Links</h2>
-          <ul>
-            <li class="mb-1">
-              <RouterLink to="/" class="hover:text-purple-900">Home</RouterLink>
-            </li>
-            <li class="mb-1">
-              <RouterLink to="/" class="hover:text-purple-900">Contact Us</RouterLink>
-            </li>
-            <li class="mb-1">
-              <RouterLink to="/">Events</RouterLink>
-            </li>
-            <li class="mb-1">
-              <RouterLink to="/">Gallery</RouterLink>
-            </li>
-            <li class="mb-1">
-              <RouterLink to="/">Give</RouterLink>
-            </li>
-          </ul>
+
+        <div class="lg:ml-5">
+          <div class="mt-4 flex flex-row gap-5 text-3xl">
+            <FontAwesomeIcon :icon="['fab', 'facebook']" class="cursor-pointer hover:text-purple-900" />
+            <FontAwesomeIcon :icon="['fab', 'instagram']" class="cursor-pointer hover:text-purple-900" />
+            <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer hover:text-purple-900" />
+          </div>
+          <div class="mt-4">
+              <h2 class="mb-1 font-bold text-purple-900 uppercase">Quick Links</h2>
+              <ul class="md:grid md:grid-cols-2">
+                <li class="mb-1">
+                  <RouterLink to="/" class="hover:text-purple-900">Home</RouterLink>
+                </li>
+                <li class="mb-1">
+                  <RouterLink to="/contact" class="hover:text-purple-900">Contact Us</RouterLink>
+                </li>
+                <li class="mb-1">
+                  <RouterLink to="/">Events</RouterLink>
+                </li>
+                <li class="mb-1">
+                  <RouterLink to="/gallery">Gallery</RouterLink>
+                </li>
+                <li class="mb-1">
+                  <RouterLink to="/give">Give</RouterLink>
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
-       
-      <p class="mt-2 text-center">
+
+      <p class="mt-9 text-center">
           &copy; All right reserved 2025 <br />
           <span class="text-purple-900"
             >Foursquare Gospel Church Ikate</span
