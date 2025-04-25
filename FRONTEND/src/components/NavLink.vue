@@ -19,7 +19,7 @@
       class="bg-gray-100 lg:bg-white transition-all duration-500 ease-in-out lg:absolute left-0 right-0 top-7 w-full lg:w-fit lg:rounded-b-sm"
       :class="[media_clicked ? 'block' : 'hidden']"
     >
-      <DropDownLink :link="'/'" :linkText="'Gallery'" />
+      <DropDownLink :link="'/gallery'" :linkText="'Gallery'" />
       <DropDownLink :link="'/'" :linkText="'Youtube'" />
       <DropDownLink :link="'/'" :linkText="'Instagram Feed'" />
     </ol>

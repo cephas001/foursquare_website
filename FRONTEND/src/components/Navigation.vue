@@ -47,7 +47,7 @@
       <NavLink :link="'/about'" :linkText="'About'" />
 
       <!-- MEDIA LINK -->
-      <NavLink :link="'/'" :linkText="'Media'" :showIcon="true" />
+      <NavLink :link="'/gallery'" :linkText="'Media'" :showIcon="true" />
 
       <!-- CONTACT LINK -->
       <NavLink :link="'/contact'" :linkText="'Contact'" />

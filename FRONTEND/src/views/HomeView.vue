@@ -28,7 +28,7 @@
   </section>
 
   <section
-    class="bg-black text-white pt-20 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
+    class="bg-black text-white py-20 px-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
     <div>
       <img src="../assets/images/DSC_0192.jpg" class="rounded-md" />

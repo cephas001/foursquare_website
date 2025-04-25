@@ -1,5 +1,5 @@
 <template>
-	<section class="p-10 lg:pt-30 lg:w-[80%] md:mx-auto">
+	<section class="p-10 lg:pt-30 lg:w-[60%] md:mx-auto">
 		<img src="../assets/images/DSC_0192.jpg" class="rounded-md" />
 	</section>
 	<section class="px-10 pb-10 lg:w-[80%] md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-5">
@@ -18,7 +18,7 @@
 				</div>
 				<div>
 					<h1 class="text-gray-700 font-semibold">Account Number:</h1>
-					<h2 class="text-gray-700" ref="accountNumberRef">
+					<h2 class="text-gray-700 tracking-wider" ref="accountNumberRef">
 						2021432882
 						<FontAwesomeIcon
 							:class="[copied ? 'text-purple-900' : '']"
@@ -26,6 +26,7 @@
 	        				:icon="copied ? ['fas', 'check-circle'] : ['fas', 'copy']"
 	        				@click="copyToClipboard"
 	      				/>
+	      				<span class="text-purple-900 ml-1 font-semibold italic" v-if="copied">copied</span>
 	      			</h2>
 				</div>
 				<div>
