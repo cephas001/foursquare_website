@@ -3,7 +3,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'winky': ['Winky Sans', 'sans-serif'],
       },
     },
   },

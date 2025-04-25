@@ -7,7 +7,7 @@
     <p class="text-gray-400">welcome</p>
     <h1 class="text-3xl font-bold lg:text-4xl">we're glad you're here.</h1>
     <p class="mt-2 lg:text-lg">At Foursquare Gospel Church Ikate, we desire to be a Jesus Church. We live this out in our 4 key vision words, Encounter, Disciple, Serve, and Impact. We would love to see you at one of our 4 identical worship services, Sundays at 8 am, 9:30 am, and 11 am.</p>
-    <p class="mt-1 lg:text-lg">Cedarcrest is made up of a diverse group of individuals and families from all walks of life. Together, we make up a church family that longs to become more like Jesus. We walk through life together through small group gatherings we call Small Groups and large gatherings on Sundays and special events.</p>  
+    <p class="mt-1 lg:text-lg">FGC Ikate is made up of a diverse group of individuals and families from all walks of life. Together, we make up a church family that longs to become more like Jesus. We walk through life together through small group gatherings we call Small Groups and large gatherings on Sundays and special events.</p>  
   </section>
   <section class="px-10 pt-10 md:w-[80%] mx-auto flex flex-col">
     <div>
@@ -15,7 +15,7 @@
     </div>
     <div class="mt-4">
       <p class="text-lg font-bold italic">Our Address</p>
-      <address class="text-purple-700 lg:text-lg">4 Kusenla Rd, Ikate Elegushi, Lekki 106104, Lagos</address>
+      <address class="text-purple-700 lg:text-lg"><a href="https://maps.app.goo.gl/VGbodYxJ3o6cYx387">4 Kusenla Rd, Ikate Elegushi, Lekki 106104, Lagos</a></address>
     </div>
     <div class="mt-2">
       <p class="text-lg font-bold italic">Call us at</p>

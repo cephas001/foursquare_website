@@ -7,13 +7,11 @@
             Foursquare Gospel Church Ikate <br />
             Citadel of Praise
           </h1>
-          <a href="https://maps.app.goo.gl/VGbodYxJ3o6cYx387">
-            4, Kusenla Road, <br />
-            By Conoil Filling Station,<br />
-            Ikate, Lagos. <br />
+          <a href="https://maps.app.goo.gl/VGbodYxJ3o6cYx387" class="cursor-pointer hover:text-purple-700">
+            4 Kusenla Rd, Ikate Elegushi, <br /> Lekki 106104, Lagos
           </a>
           <h1 class="mt-4">
-            <a href="tel:+2348112985079" class="hover:text-purple-700 focus:text-purple-700">Tel: +234 811 298 5079</a><br />
+            <a href="tel:+2348112985079" class="hover:text-purple-700 focus:text-purple-700 cursor-pointer">Tel: +234 811 298 5079</a><br />
           </h1>
         </div>
 
@@ -33,13 +31,13 @@
                   <RouterLink to="/contact" class="hover:text-purple-900">Contact Us</RouterLink>
                 </li>
                 <li class="mb-1">
-                  <RouterLink to="/">Events</RouterLink>
+                  <RouterLink to="/" class="hover:text-purple-900">Events</RouterLink>
                 </li>
                 <li class="mb-1">
-                  <RouterLink to="/gallery">Gallery</RouterLink>
+                  <RouterLink to="/gallery" class="hover:text-purple-900">Gallery</RouterLink>
                 </li>
                 <li class="mb-1">
-                  <RouterLink to="/give">Give</RouterLink>
+                  <RouterLink to="/give" class="hover:text-purple-900">Give</RouterLink>
                 </li>
               </ul>
             </div>

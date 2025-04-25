@@ -2,7 +2,7 @@
   <HeroSection
     backgroundURL="src/assets/images/Banner-1.png"
   >
-    <h1 :class="$classStore.class" class="font-extrabold tracking-wider">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
+    <h1 :class="$classStore.class" class="font-bold tracking-wider lg:tracking-widest font-roboto">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
   </HeroSection>
 
   <section
@@ -126,7 +126,7 @@
     <div class="mt-4">
       <p class="text-gray-500">Events</p>
       <h1 class="mt-3 mb-5 text-3xl font-bold">
-        here's what's happening next at FGC Ikate
+        here's what's happening next at <br> FGC Ikate
       </h1>
       <CustomButton text="Upcoming Events" link="/" />
     </div>
