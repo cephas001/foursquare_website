@@ -1,10 +1,17 @@
 <template>
   <HeroSection
-    backgroundURL="src/assets/images/background.jpg"
   >
-    <p :class="$classStore.class" class="font-bold uppercase">Welcome to <br> FGC Ikate.</p>
+    <template #text>
+      <div :class="$classStore.class" class="bg-[url('src/assets/images/DSC_0192.jpg')]">
+        <p class="font-extrabold font-winky tracking-widest absolute z-10 text-5xl">Welcome to <br> FGC Ikate.</p>
+      </div>
+    </template>
+
+    <template #overlay>
+      <Overlay />
+    </template>
   </HeroSection>
-  
+
   <section class="p-10">
     <p class="text-gray-400 mb-1 md:text-center">Welcome to FGC Ikate</p>
     <iframe class="w-full md:w-[70%] md:mx-auto" height="400" src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

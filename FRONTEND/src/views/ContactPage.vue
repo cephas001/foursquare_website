@@ -1,6 +1,11 @@
 <template>
-  <HeroSection backgroundURL="src/assets/images/background.jpg">
-    <h1 :class="$classStore.class" class="font-bold">we can't wait to meet you!</h1>
+  <HeroSection
+  >
+    <template #text>
+      <div :class="$classStore.class" class="bg-[url('src/assets/images/Banner-1.png')]">
+        <h1 class="font-bold absolute z-10">we can't wait to meet you!</h1>
+      </div>
+    </template>
   </HeroSection>
 
   <section class="px-10 pt-10 md:w-[80%] mx-auto">
