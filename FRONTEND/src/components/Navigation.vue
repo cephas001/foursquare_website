@@ -45,22 +45,22 @@
 
       <!-- ABOUT LINK -->
       <NavLink :link="'/about'" :linkText="'About'" />
-
-      <!-- MEDIA LINK -->
-      <NavLink :link="'/gallery'" :linkText="'Media'" :showIcon="true" />
-
+      
       <!-- CONTACT LINK -->
       <NavLink :link="'/contact'" :linkText="'Contact'" />
+      
+      <!-- MEDIA LINK -->
+      <NavLink :link="'/gallery'" :linkText="'Gallery'" />
 
       <!-- GIVE LINK -->
       <NavLink :link="'/give'" :linkText="'Give'" />
 
-      <div class="lg:hidden flex absolute bottom-5 right-5 items-center text-4xl mb-4 transition-all duration-1000" :class="[NavBarStore.openMenu ? 'translate-x-0' : 'translate-x-[100%]']">
+      <div class="lg:hidden flex absolute bottom-8 items-center justify-center text-4xl mb-4 w-full">
         <RouterLink to="/" @click="redirectFacebook">
-          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-4 cursor-pointer focus:text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer focus:text-purple-900" />
         </RouterLink>
         <RouterLink to="/" @click="redirectInstagram">
-          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-4 cursor-pointer focus:text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer focus:text-purple-900" />
         </RouterLink>
         <RouterLink to="/" @click="redirectYoutube">
           <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer focus:text-purple-900" />

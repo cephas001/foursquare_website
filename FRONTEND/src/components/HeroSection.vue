@@ -12,11 +12,4 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-const props = defineProps({
-  backgroundURL: {
-    type: String,
-  },
-});
-console.log(typeof props.backgroundURL);
 </script>

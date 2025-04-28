@@ -38,37 +38,20 @@
     </div>
     <div class="mt-4">
       <p class="text-gray-400">welcome</p>
-      <h1 class="my-3 text-3xl font-bold">this is Citadel of Praise</h1>
-      <p class="mb-4">
-        We live this out in our 4 key vision words, Encounter, Disciple, Serve,
-        and Impact. We want our church to encounter the living God, be a place
-        of discipleship, serve the local community and the world creating impact
+      <h1 class="my-3 text-3xl font-bold">This is Citadel of Praise</h1>
+      <p class="mb-2">
+        At FGC Ikate we believe in Jesus as our Saviour, Healer, Baptizer with the Holy Ghost and our Soon Coming King. We want our church to be a place of discipleship, serve the local community and the world creating impact
         through the name of Jesus Christ.
       </p>
       <p class="mb-4">
-        FGC Ikate, located in Ikate, Lekki, Lagos, is made up of a diverse group
+        Located in Ikate, Lekki, Lagos, we are made up of a diverse group
         of individuals and families from all walks of life. Together, we make up
-        a church family that longs to become more like Jesus. We walk through
-        life together through Small Groups and large gatherings on Sundays and
-        special events.
+        a church family that longs to become more like Jesus.
       </p>
       <CustomButton text="About Us" color="black" background="white" link="/about" />       
     </div>
   </section>
 
-  <!-- <section class="p-10">
-    <p class="text-black/80">resources</p>
-    <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div v-for="(resource, index) in resources" :key="resource.id">
-        <Resource
-          :Id="resource.id"
-          :ResourceTitle="resource.ResourceTitle"
-          :AdditionalInfo="resource.AdditionalInfo"
-          :ResourceLink="resource.ResourceLink"
-        />
-      </div>
-    </div>
-  </section> -->
   <section class="text-black py-15 px-10 grid grid-cols-1 text-md md:text-lg">
     <div class="mb-2 lg:w-1/2 lg:mx-auto">
       <p class="text-gray-500">Watch</p>
@@ -138,9 +121,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
 import Card from "../components/Card.vue";
-import Resource from "../components/Resource.vue";
 import CustomButton from "../components/CustomButton.vue";
 
 const pictures = [{ src: "src/assets/images/Locator.jpg", alt: "Image 1" }];
