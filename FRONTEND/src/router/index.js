@@ -8,6 +8,7 @@ import GivePage from "../views/GivePage.vue";
 import NotFound from "../views/NotFound.vue"
 import AboutPage from "../views/AboutPage.vue";
 import ZoomMeetings from "../views/ZoomMeetings.vue";
+import MeetingThanks from "../views/MeetingThanks.vue";
 
 const routes = [
   { path: "/", component: HomeView },
@@ -16,6 +17,8 @@ const routes = [
   { path: "/gallery", component: ImageGallery },
   { path: "/give", component: GivePage },
   { path: "/about", component: AboutPage },
+  { path: "/meeting", component: ZoomMeetings },
+  { path: "/meeting_thanks", component: MeetingThanks},
   { path: "/:pathMatch(.*)*", component: NotFound}
 ];
 
