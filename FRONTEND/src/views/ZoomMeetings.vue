@@ -9,7 +9,7 @@ import axios from "axios";
 
 const meetingNumber = ref("8254066675");
 const role = ref(0);
-const userName = ref("Web Client");
+const userName = ref("Web User" + Date.now().toString());
 
 const fetchSignature = async () => {
     try {   
@@ -26,18 +26,14 @@ const fetchSignature = async () => {
 
 const startMeeting = async () => {
    try {
-        const signature = await fetchSignature();
-        console.log(import.meta.env.VITE_MEETING_PASSWORD);
-        
         ZoomMtg.init({
         leaveUrl: '/meeting_thanks',
-        success: (success) => {
+        success: async (success) => {
             ZoomMtg.join({
-                signature: signature,
+                signature: await fetchSignature(),
                 meetingNumber: meetingNumber.value,
                 userName: userName.value,
                 sdkKey: import.meta.env.VITE_ZOOM_SDK_KEY,
-                userEmail: "",
                 passWord: import.meta.env.VITE_MEETING_PASSWORD,
                 success: () => {
                     console.log("Zoom meeting joined successfully!");

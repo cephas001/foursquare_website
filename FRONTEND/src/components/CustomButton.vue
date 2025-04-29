@@ -1,10 +1,13 @@
 <template>
   <RouterLink
-    :class="[color !== 'white' ? 'border-2 border-black rounded-md' : '', `px-4 py-3 bg-${background} text-${color} rounded-md text-base cursor-pointer tracking-${letterSpacing} hover:text-purple-500 uppercase mr-2 w-[fit-content] mb-2 md:mb-0 font-${bold}`]"
+    :class="[color !== 'white' ? 'border-2 border-black rounded-md' : '', `px-4 py-3 bg-${background} text-${color} rounded-md text-base cursor-pointer tracking-${letterSpacing} hover:text-purple-500 focus:text-purple-500 uppercase w-[fit-content] font-${bold}`]"
     :to="link"
     @click="link == '#' && doNothing"
+    rel="noopener noreferrer"
+    :aria-label="`Navigate to ${text} Page`"
+    role="link"
   >
-    <FontAwesomeIcon :icon="iconClass" v-if="hasIcon" />
+    <FontAwesomeIcon :icon="iconClass" v-if="iconClass" />
     {{ text }}
   </RouterLink>
 </template>
@@ -27,9 +30,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  hasIcon: {    
-    type: Boolean,
-  }, 
   iconClass: {
     type: Array
   }, 

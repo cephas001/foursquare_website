@@ -11,6 +11,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import VueLazyload from "vue-lazyload";
 
 import HeroSection from "./components/HeroSection.vue";
 import CustomButton from "./components/CustomButton.vue";
@@ -25,6 +26,7 @@ library.add(fab);
 app.use(pinia);
 app.use(router);
 app.use(VueSplide);
+app.use(VueLazyload);
 app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.component("HeroSection", HeroSection);
 app.component("CustomButton", CustomButton);

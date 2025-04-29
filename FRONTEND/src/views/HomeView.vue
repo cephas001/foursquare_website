@@ -34,7 +34,7 @@
     class="bg-black text-white py-20 px-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
     <div>
-      <img src="../assets/images/DSC_0192.jpg" class="rounded-md" />
+      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
     <div class="mt-4">
       <p class="text-gray-400">welcome</p>
@@ -97,7 +97,7 @@
         :Day="activity.Day"
         :Activity="activity.Activity"
         :Time="activity.Time"
-        :Image="activity.Image"
+        :ImageURL="activity.Image"
         :LiveLink="activity.LiveLink"
       />
     </SplideSlide>
@@ -107,7 +107,7 @@
     class="text-black pt-20 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
     <div>
-      <img src="../assets/images/DSC_0192.jpg" class="rounded-md" />
+      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
     <div class="mt-4">
       <p class="text-gray-500">Events</p>
@@ -123,6 +123,7 @@
 import { ref } from "vue";
 import Card from "../components/Card.vue";
 import CustomButton from "../components/CustomButton.vue";
+import Image from "../components/Image.vue";
 
 const pictures = [{ src: "src/assets/images/Locator.jpg", alt: "Image 1" }];
 

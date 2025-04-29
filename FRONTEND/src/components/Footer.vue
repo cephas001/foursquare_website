@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-black border-t-4 border-t-white text-white w-full pt-15 pb-5 px-10 font-mono">
+    <footer class="bg-black text-white w-full pt-15 pb-5 px-10 font-mono">
       <div class="flex flex-col md:flex-row md:w-fit md:mx-auto md:justify-around lg:justify-evenly gap-4 md:gap-6 md:items-center">
         <div class="lg:mr-5">
           <img src="../assets/images/footer-logo.png" alt="FOOTER LOGO" class="w-[180px] mb-4" />
