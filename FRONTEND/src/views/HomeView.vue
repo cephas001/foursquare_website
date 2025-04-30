@@ -11,14 +11,14 @@
   <section
     class="p-10 flex flex-col lg:items-center md:items-center justify-center md:flex-row lg:flex-row"
   >
-    <div class="text-4xl lg:text-6xl lg:mr-4 md:mr-3">
+    <div class="text-4xl lg:text-6xl lg:mr-4 md:mr-3" v-bind="getAOSAttributes()">
       <h1 class="font-winky font-extrabold italic">
         join us for church <br />
         this Sunday!
       </h1>
     </div>
 
-    <div class="text-xl mt-2 lg:text-3xl lg:ml-4 md:ml-3 md:mt-0">
+    <div class="text-xl mt-2 lg:text-3xl lg:ml-4 md:ml-3 md:mt-0" v-bind="getAOSAttributes({ delay: 300 })">
       <h1 class="mb-1">
         Service starts 7:30am <br />
         every Sunday
@@ -33,10 +33,10 @@
   <section
     class="bg-black text-white py-20 px-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
-    <div>
+    <div v-bind="getAOSAttributes({ type: 'fade' })">
       <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
-    <div class="mt-4">
+    <div class="mt-4" v-bind="getAOSAttributes({ delay: 300 })">
       <p class="text-gray-400">welcome</p>
       <h1 class="my-3 text-3xl font-bold">This is Citadel of Praise</h1>
       <p class="mb-2">
@@ -48,12 +48,12 @@
         of individuals and families from all walks of life. Together, we make up
         a church family that longs to become more like Jesus.
       </p>
-      <CustomButton text="About Us" color="black" background="white" link="/about" />       
+      <CustomButton text="About Us" color="black" background="white" link="/about" v-bind="getAOSAttributes({ type: 'fade-down', delay: 300 })"/>       
     </div>
   </section>
 
   <section class="text-black py-15 px-10 grid grid-cols-1 text-md md:text-lg">
-    <div class="mb-2 lg:w-1/2 lg:mx-auto">
+    <div class="mb-2 lg:w-1/2 lg:mx-auto" v-bind="getAOSAttributes()">
       <p class="text-gray-500">Watch</p>
       <h1 class="my-3 text-4xl font-bold">
         now you can watch anytime, anywhere.
@@ -63,7 +63,7 @@
         Catch up on our previous sermons, or watch us live online at 7:30am!
       </p>
     </div>
-    <div class="flex flex-col md:flex-row gap-2 lg:w-1/2 lg:mx-auto">
+    <div class="flex flex-col md:flex-row gap-2 lg:w-1/2 lg:mx-auto" v-bind="getAOSAttributes({ delay: 300 })">
       <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
       <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
     </div>
@@ -78,9 +78,8 @@
       type: 'loop',
       perPage: 3,
       rewind: true,
-      autoplay: true,
+      autoplay: false,
       gap: '1rem',
-      interval: 3000,
       pauseOnHover: false,
       breakpoints: {
         1024: { perPage: 3 },
@@ -106,10 +105,10 @@
   <section
     class="text-black pt-15 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
-    <div>
+    <div v-bind="getAOSAttributes({ type: 'fade' })">
       <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
-    <div class="mt-4">
+    <div class="mt-4" v-bind="getAOSAttributes({ delay: 300 })">
       <p class="text-gray-500">Events</p>
       <h1 class="mt-3 mb-5 text-3xl font-bold">
         here's what's happening next at <br> FGC Ikate
@@ -125,7 +124,7 @@ import Card from "../components/Card.vue";
 import CustomButton from "../components/CustomButton.vue";
 import Image from "../components/Image.vue";
 
-const pictures = [{ src: "src/assets/images/Locator.jpg", alt: "Image 1" }];
+import { getAOSAttributes } from "../utils/animation.js";
 
 const redirectYoutube = () => {
   window.open("https://www.youtube.com/@fgcikate/videos", "_blank");
@@ -165,41 +164,4 @@ const activities = ref([
     Image: "src/assets/images/DSC_0060.jpg",
   },
 ]);
-
-const resources = ref([
-  {
-    id: 1,
-    ResourceTitle: "Give Now",
-    AdditionalInfo:
-      "Support the missions and outreach of the church through your generous donations.",
-    ResourceLink: "/",
-    ImageLink: "src/assets/images/give-bird.svg",
-  },
-  {
-    id: 2,
-    ResourceTitle: "Contact Us",
-    AdditionalInfo:
-      "Reach out to us for any inquires, assistance, or more information.",
-    ResourceLink: "/",
-    ImageLink: "src/assets/images/call-icon.png",
-  },
-  {
-    id: 3,
-    ResourceTitle: "Need Prayer",
-    AdditionalInfo:
-      "Let us lift you up in prayer; share your prayer requests with us.",
-    ResourceLink: "/",
-    ImageLink: "src/assets/images/prayer-ribbon.svg",
-  },
-  {
-    id: 4,
-    ResourceTitle: "Share Testimony",
-    AdditionalInfo:
-      "Share your testimony and inspire others with your faith journey.",
-    ResourceLink: "/",
-    ImageLink: "src/assets/images/testimony-hands.svg",
-  },
-]);
-
-var showDropDown = ref(false);
 </script>

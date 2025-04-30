@@ -1,5 +1,5 @@
 <template>
-    <div :class="`flex space-x-1 items-center justify-center text-black h-full w-full absolute inset-0 bg-blue`">
+    <div :class="`flex space-x-1 items-center justify-center text-black h-full w-full absolute inset-0 bg-gray-200`">
         <FontAwesomeIcon
             :icon="['fas', 'circle']"
             class="bounce-fast bounce-delay-1 text-xl"

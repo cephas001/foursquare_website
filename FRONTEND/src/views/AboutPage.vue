@@ -10,11 +10,27 @@
 
   <section class="p-10">
     <p class="text-gray-400 mb-1 md:text-center">Welcome to FGC Ikate</p>
-    <iframe class="w-full md:w-[70%] md:mx-auto" height="400" src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="relative">
+      <iframe 
+        class="w-full md:w-[70%] md:mx-auto" 
+        height="400" 
+        src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+        :class="[iframeLoaded ? 'opacity-100' : 'opacity-0', 'w-full']"
+        @load="iframeLoaded = true"
+        ></iframe>
+      <div :class="[!iframeLoaded ? 'opacity-100' : 'opacity-0']">
+        <Loader />
+      </div>
+    </div>
   </section>
 
   <section class="px-10 pb-10 md:w-[80%] md:mx-auto">
-    <div class="text-center">
+    <div class="text-center" v-bind="getAOSAttributes()">
       <p class="text-gray-500">our beliefs</p>
       <h1 class="text-3xl font-bold lg:text-4xl">what we believe serves as the foundation of our faith.</h1>
     </div>
@@ -31,21 +47,24 @@
           </h1>
           <p class="my-3 flex flex-col" v-if="aboutPart.show">
             {{ aboutPart.body }}
-            <a :href="aboutPart.externalLink" target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 mt-1">
+            <a :href="aboutPart.externalLink" target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 mt-1" v-bind="getAOSAttributes({ type: 'fade-in' })">
                 Learn More
               </a> 
           </p>
         </div>
       </div>
-      <div class="md:w-[50%]"><Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" /></div>
+      <div class="md:w-[50%]"><Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" v-bind="getAOSAttributes({ type: 'fade'})"/></div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import Image from "../components/Image.vue";
+import { getAOSAttributes } from "../utils/animation.js";
+import Loader from "../components/Loader.vue";
 
+const iframeLoaded = ref(false);
 const aboutInformation = ref([
   {
     id: 1,

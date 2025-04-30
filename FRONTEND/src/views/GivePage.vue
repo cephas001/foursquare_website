@@ -1,15 +1,20 @@
 <template>
 	<section class="p-10 lg:pt-30 lg:w-[60%] md:mx-auto">
-		<Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+		<div v-bind="getAOSAttributes({ type: 'fade' })">
+			<Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+		</div>
 	</section>
 	<section class="px-10 pb-10 lg:w-[80%] md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-5">
-		<div>
+		<div v-bind="getAOSAttributes()">
 			<h1 class="text-lg lg:text-xl italic font-semibold text-center md:leading-loose">“Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again.” <br> (Luke 6:38).</h1>
 		</div>
-		<div>
+		<div v-bind="getAOSAttributes({ delay: 300 })">
 			<div class="border-1 border-gray-400 relative p-4 mt-3 grid grid-cols-1 gap-5">
-				<div class="absolute right-[-25px] top-[-25px]">
-					<img src="../assets/images/trans.jpg" class="w-[80px]">	
+				<div class="absolute right-[-25px] top-[-22px]">
+					<FontAwesomeIcon
+        				:icon="['fas', 'credit-card']"
+        				class="text-5xl text-purple-950"
+      				/>	
 				</div>
 				<h1 class="uppercase font-semibold">Direct Bank Transfer</h1>
 				<div>
@@ -41,6 +46,7 @@
 <script setup>
 import { ref } from "vue";
 import Image from "../components/Image.vue";
+import { getAOSAttributes } from "../utils/animation.js";
 
 const accountNumberRef = ref(null);
 const copied = ref(false);

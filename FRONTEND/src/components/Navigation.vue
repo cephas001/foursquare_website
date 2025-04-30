@@ -57,13 +57,13 @@
 
       <div class="lg:hidden flex absolute bottom-12 items-center justify-center text-4xl mb-4 w-full">
         <RouterLink to="/" @click="redirectFacebook">
-          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer focus:text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer focus:text-purple-900 text-purple-900" />
         </RouterLink>
         <RouterLink to="/" @click="redirectInstagram">
-          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer focus:text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer focus:text-purple-900 text-purple-900" />
         </RouterLink>
         <RouterLink to="/" @click="redirectYoutube">
-          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer focus:text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer focus:text-purple-900 text-purple-900" />
         </RouterLink>
       </div>
     </ul>

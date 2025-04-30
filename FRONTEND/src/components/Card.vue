@@ -1,5 +1,5 @@
 <template>
-	<div class="max-w-sm border rounded-lg bg-white text-black m-auto h-full">
+	<div class="max-w-sm border rounded-lg bg-white text-black m-auto h-full" v-bind="getAOSAttributes({ type: 'fade'})">
     <Image :imageSrc="ImageURL" classList="rounded-t-lg" alt="Event Image" />
 	  <div class="p-5">
 	    <h5 class="mb-2 text-2xl tracking-tight"><span class="font-winky font-bold text-3xl">Join Us</span> <br /><i>for {{ Activity }}</i></h5>
@@ -14,6 +14,7 @@
 
 <script setup>
 import SmallCustomButton from "./SmallCustomButton.vue";
+import { getAOSAttributes } from "../utils/animation.js";
 import Image from "./Image.vue";
 
 const props = defineProps({
