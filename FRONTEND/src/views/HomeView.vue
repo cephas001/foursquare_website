@@ -23,7 +23,7 @@
         Service starts 7:30am <br />
         every Sunday
       </h1>
-      <div class="flex flex-col md:flex-row md:gap-2 mt-4">
+      <div class="flex flex-col md:flex-row gap-2 mt-4">
         <CustomButton text="Plan your visit" link="/contact" />
         <CustomButton text="Join Online" color="black" background="white" :hasIcon="true" :iconClass="['fas', 'video']" link="#" @click="redirectYoutube" />        
       </div>
@@ -63,7 +63,7 @@
         Catch up on our previous sermons, or watch us live online at 7:30am!
       </p>
     </div>
-    <div class="flex flex-col md:flex-row md:gap-2 lg:w-1/2 lg:mx-auto">
+    <div class="flex flex-col md:flex-row gap-2 lg:w-1/2 lg:mx-auto">
       <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
       <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
     </div>
@@ -104,7 +104,7 @@
   </Splide>
 
   <section
-    class="text-black pt-20 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
+    class="text-black pt-15 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
     <div>
       <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />

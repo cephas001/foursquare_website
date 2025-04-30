@@ -3,7 +3,7 @@
     class="pt-5 lg:pt-0 pb-2 lg:pb-0 pl-2 pr-2 lg:mr-2 flex flex-col items-center cursor-pointer lg:font-light"
   >
     <div class="flex justify-between items-center border-b border-b-gray-400 lg:border-0 w-full">
-      <RouterLink :to="link" class="pl-4 pb-1 lg:pl-0 lg:pb-0 transition-colors mr-1 hover:text-purple-500 focus:text-purple-500">{{ linkText }}</RouterLink>
+      <RouterLink :to="link" :class="[route.path == link ? 'text-purple-500' : '', 'pl-4 pb-1 lg:pl-0 lg:pb-0 transition-colors mr-1 hover:text-purple-500 focus:text-purple-500']">{{ linkText }}</RouterLink>
       <!-- SHOW PLUS ICON OR CARET ICON IF THERE IS A DROPDOWN -->
       <FontAwesomeIcon
         class="lg:!hidden mr-4 mb-1"
@@ -25,7 +25,8 @@
 
 <script setup>
 // import DropDownLink from "./DropDownLink.vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
+const route = useRoute();
 
 const props = defineProps({
   link: {

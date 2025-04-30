@@ -15,7 +15,7 @@
   </section>
 
   <section class="px-10 pt-8 md:w-[80%] mx-auto flex flex-col">
-    <div class="h-[450px] bg-gray-300" @click="check">
+    <div>
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6736781807263!2d3.488098375074313!3d6.435942393555263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf5a0c8b8ec71%3A0xe218c513106b3ddf!2sFoursquare%20Gospel%20Church%20Ikate!5e0!3m2!1sen!2sng!4v1745397563386!5m2!1sen!2sng" 
         height="450" 
@@ -23,10 +23,12 @@
         allowfullscreen="true" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade" 
-        class="w-full" 
-        @load="iframeLoaded = true">
-      </iframe>
-      <Loader v-if="!iframeLoaded" />
+        :class="[!iframeLoaded ? 'opacity-100' : 'opacity-0', 'w-full']"
+        @load="iframeLoaded = false"
+      ></iframe>
+      <div :class="[iframeLoaded ? 'opacity-100' : 'opacity-0']">
+        <Loader />
+      </div>
     </div>
     <div class="mt-4">
       <p class="text-lg font-bold italic">Our Address</p>
@@ -44,7 +46,7 @@
  
   <section class="p-10 md:w-[80%] m-auto">
     <p class="text-gray-400 text-center">Let Us Know You're Coming</p>
-    <h1 class="mt-1 mb-5 text-center text-3xl lg:text-4xl lg:mb-9 font-bold">we can't wait to meet you! let us know you're coming or reach out to us.</h1>
+    <h1 class="mt-1 mb-5 text-center text-3xl lg:text-4xl lg:mb-9 font-bold">we can't wait to meet you! <br> let us know you're coming or reach out to us.</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:items-center">
       <div class="mb-4">
         <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
@@ -103,9 +105,6 @@ const selected = ref("");
 const visiting = ref(false);
 const reachingOut = ref(false);
 
-const check = () => {
-  console.log(iframeLoaded.value);
-}
 const displayAccordingly = () => {
   if(selected.value == "Visiting") {
     visiting.value = true;
