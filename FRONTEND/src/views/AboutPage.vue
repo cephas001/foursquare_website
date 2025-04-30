@@ -2,13 +2,9 @@
   <HeroSection
   >
     <template #text>
-      <div :class="$classStore.class" class="bg-[url('src/assets/images/Banner-1.png')]">
-        <p class="font-extrabold font-winky tracking-widest absolute z-10 text-6xl">Welcome to <br> FGC Ikate.</p>
+      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Banner-1.png')]">
+        <p class="font-extrabold font-winky tracking-widest absolute z-10 text-6xl">Welcome to <br> FGC Ikate</p>
       </div>
-    </template>
-
-    <template #overlay>
-      <Overlay />
     </template>
   </HeroSection>
 
@@ -41,13 +37,14 @@
           </p>
         </div>
       </div>
-      <div class="md:w-[50%]"><img src="../assets/images/DSC_0192.jpg" class="rounded-md" /></div>
+      <div class="md:w-[50%]"><Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" /></div>
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
+import Image from "../components/Image.vue";
 
 const aboutInformation = ref([
   {

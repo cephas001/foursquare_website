@@ -3,9 +3,12 @@
 @import "flowbite-vue/index.css";
 @import "@splidejs/vue-splide/css";
 
-@import '@fontsource/poppins/300.css'; /* Thin */
-@import '@fontsource/poppins/400.css'; /* Regular */
-@import '@fontsource/poppins/700.css'; /* Bold */
+@import '@fontsource/poppins/300.css';
+/* Thin */
+@import '@fontsource/poppins/400.css';
+/* Regular */
+@import '@fontsource/poppins/700.css';
+/* Bold */
 @import '@fontsource-variable/roboto';
 @import '@fontsource-variable/winky-sans';
 
@@ -18,13 +21,50 @@
     body {
         font-family: 'Poppins', sans-serif;
     }
+
     .font-winky {
         font-family: 'Winky Sans Variable', sans-serif;
     }
+
     .font-roboto {
         font-family: 'Roboto Variable', sans-serif;
     }
+
     .font-poppins {
         font-family: 'Poppins', sans-serif;
-    } 
+    }
+}
+
+@layer utilities {
+    @keyframes bounce-sequential {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        33% {
+            transform: translateY(-20px);
+        }
+
+        66% {
+            transform: translateY(0);
+        }
+    }
+
+    .bounce-fast {
+        animation: bounce-sequential 0.6s infinite ease-in-out;
+    }
+
+    .bounce-delay-1 {
+        animation-delay: 0s;
+    }
+
+    .bounce-delay-2 {
+        animation-delay: 0.2s;
+    }
+
+    .bounce-delay-3 {
+        animation-delay: 0.4s;
+    }
 }

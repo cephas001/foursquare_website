@@ -1,6 +1,6 @@
 <template>
 	<section class="p-10 lg:pt-30 lg:w-[60%] md:mx-auto">
-		<img src="../assets/images/DSC_0192.jpg" class="rounded-md" />
+		<Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
 	</section>
 	<section class="px-10 pb-10 lg:w-[80%] md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-5">
 		<div>
@@ -40,6 +40,7 @@
 
 <script setup>
 import { ref } from "vue";
+import Image from "../components/Image.vue";
 
 const accountNumberRef = ref(null);
 const copied = ref(false);

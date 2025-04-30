@@ -2,7 +2,7 @@
   <HeroSection
   >
     <template #text>
-      <div :class="$classStore.class" class="bg-[url('src/assets/images/Locator.jpg')]">
+      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Locator.jpg')]">
         <h1 class="font-extrabold tracking-wide absolute z-10">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
       </div>
     </template>
@@ -23,7 +23,7 @@
         Service starts 7:30am <br />
         every Sunday
       </h1>
-      <div class="flex flex-col md:flex-row mt-4">
+      <div class="flex flex-col md:flex-row md:gap-2 mt-4">
         <CustomButton text="Plan your visit" link="/contact" />
         <CustomButton text="Join Online" color="black" background="white" :hasIcon="true" :iconClass="['fas', 'video']" link="#" @click="redirectYoutube" />        
       </div>
@@ -63,7 +63,7 @@
         Catch up on our previous sermons, or watch us live online at 7:30am!
       </p>
     </div>
-    <div class="flex flex-col md:flex-row lg:w-1/2 lg:mx-auto">
+    <div class="flex flex-col md:flex-row md:gap-2 lg:w-1/2 lg:mx-auto">
       <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
       <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
     </div>

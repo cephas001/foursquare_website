@@ -1,7 +1,7 @@
 <template>
   <nav
-    :class="[NavBarStore.fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 lg:bg-black' : '']"
-    class="bg-black text-lg w-[100%] lg:fixed lg:z-500 text-white top-0 right-0 left-0 flex justify-around px-8 py-7 lg:py-5 items-center"
+    :class="[NavBarStore.fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 backdrop-blur-sm' : '']"
+    class="bg-black w-[100%] lg:fixed lg:z-500 text-white top-0 right-0 left-0 flex justify-around px-8 py-7 lg:py-5 items-center"
   >
     <!-- Logo Container -->
     <RouterLink
