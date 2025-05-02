@@ -15,6 +15,7 @@ import VueLazyload from "vue-lazyload";
 
 import HeroSection from "./components/HeroSection.vue";
 import CustomButton from "./components/CustomButton.vue";
+import Media from "./components/Media.vue";
 import VueSplide from '@splidejs/vue-splide';
 
 const pinia = createPinia();
@@ -30,5 +31,6 @@ app.use(VueLazyload);
 app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.component("HeroSection", HeroSection);
 app.component("CustomButton", CustomButton);
+app.component("Media", Media);
 app.config.globalProperties.$classStore = useClassStore();
 app.mount("#app");

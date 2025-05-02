@@ -30,9 +30,7 @@
         :class="[iframeLoaded ? 'opacity-100' : 'opacity-0', 'w-full']"
         @load="iframeLoaded = true"
       ></iframe>
-      <div :class="[!iframeLoaded ? 'opacity-100' : 'opacity-0']">
-        <Loader />
-      </div>
+      <Loader :isLoaded="iframeLoaded" />
     </div>
     <div class="mt-4">
       <p class="text-lg font-bold italic">Our Address</p>
@@ -53,7 +51,7 @@
     <h1 class="mt-1 mb-5 text-center text-3xl lg:text-4xl lg:mb-9 font-bold" v-bind="getAOSAttributes()">we can't wait to meet you! <br> let us know you're coming or reach out to us.</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:items-center">
       <div class="mb-4" v-bind="getAOSAttributes({ type: 'fade', delay: 300})">
-        <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+        <Media imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
       </div>
       <form>
         <div>
@@ -102,7 +100,6 @@
 
 <script setup>
 import { ref } from "vue";
-import Image from "../components/Image.vue";
 import Loader from "../components/Loader.vue";
 import { getAOSAttributes } from "../utils/animation.js";
 

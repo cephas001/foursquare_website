@@ -21,7 +21,7 @@
     <div class="flex items-center lg:hidden" ref="menuButtonRef">
       <FontAwesomeIcon
         :icon="['fas', 'bars']"
-        class="text-2xl cursor-pointer"
+        class="text-2xl cursor-pointer text-white"
         @click="NavBarStore.openMenu = true"
       />
     </div>

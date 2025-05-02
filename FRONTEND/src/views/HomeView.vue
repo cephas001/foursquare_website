@@ -31,10 +31,10 @@
   </section>
 
   <section
-    class="bg-black text-white py-20 px-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
+    class="bg-black text-white py-20 px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
   >
     <div v-bind="getAOSAttributes({ type: 'fade' })">
-      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+      <Media imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
     <div class="mt-4" v-bind="getAOSAttributes({ delay: 300 })">
       <p class="text-gray-400">welcome</p>
@@ -52,7 +52,7 @@
     </div>
   </section>
 
-  <section class="text-black py-15 px-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-md md:text-lg place-items-center">
+  <section class="text-black py-15 px-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-md md:text-lg place-items-center lg:px-20">
     <div>
       <div class="mb-2" v-bind="getAOSAttributes()">
         <p class="text-gray-500">Watch</p>
@@ -69,8 +69,8 @@
         <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
       </div>
     </div>
-    <div v-bind="getAOSAttributes({ type: 'fade' })">
-      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+    <div v-bind="getAOSAttributes({ type: 'fade' })" class="mt-4 md:mt-0">
+      <Media videoSrc="src/assets/videos/2661_milkyway_coll_night_skies_time-lapse_SaintBarthelemy2720p5000br.mp4" classList="rounded-md" />
     </div>
   </section>
 
@@ -78,7 +78,7 @@
     our activities
   </p>
   <Splide
-    class="px-10 pb-10 bg-black flex justify-center"
+    class="px-10 pb-10 bg-black flex justify-center lg:px-20"
     :options="{
       type: 'loop',
       perPage: 3,
@@ -109,10 +109,10 @@
   </Splide>
 
   <section
-    class="text-black pt-15 px-10 pb-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4"
+    class="text-black py-15 px-10 grid grid-cols-1 md:grid-cols-2 text-md md:text-lg md:place-items-center md:gap-4 lg:px-20"
   >
     <div v-bind="getAOSAttributes({ type: 'fade' })">
-      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+      <Media imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
     <div class="mt-4" v-bind="getAOSAttributes({ delay: 300 })">
       <p class="text-gray-500">Events</p>
@@ -128,7 +128,6 @@
 import { ref } from "vue";
 import Card from "../components/Card.vue";
 import CustomButton from "../components/CustomButton.vue";
-import Image from "../components/Image.vue";
 
 import { getAOSAttributes } from "../utils/animation.js";
 
@@ -151,7 +150,7 @@ const activities = ref([
   },
   {
     id: 3,
-    Activity: "Young Poeple Pray",
+    Activity: "Young People Pray",
     Image: "src/assets/images/DSC_0192.jpg",
     Description: "Fridays at 6 PM, a gathering where young hearts ignite in passionate prayer! Join us as we lift our voices in worship, seek God's guidance, and strengthen each other in faith. Come and be part of a movement of prayer, purpose, and power!"
   },

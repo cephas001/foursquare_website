@@ -8,11 +8,11 @@
     </template>
   </HeroSection>
 
-  <section class="p-10">
+  <section class="p-10 md:w-[70%] md:mx-auto">
     <p class="text-gray-400 mb-1 md:text-center">Welcome to FGC Ikate</p>
     <div class="relative">
       <iframe 
-        class="w-full md:w-[70%] md:mx-auto" 
+        class="w-full" 
         height="400" 
         src="https://www.youtube.com/embed/tSmxgEHAIZY?si=_Qgztf-UXHVXC5h1" 
         title="YouTube video player" 
@@ -23,9 +23,7 @@
         :class="[iframeLoaded ? 'opacity-100' : 'opacity-0', 'w-full']"
         @load="iframeLoaded = true"
         ></iframe>
-      <div :class="[!iframeLoaded ? 'opacity-100' : 'opacity-0']">
-        <Loader />
-      </div>
+        <Loader :isLoaded="iframeLoaded" />
     </div>
   </section>
 
@@ -53,14 +51,13 @@
           </p>
         </div>
       </div>
-      <div class="md:w-[50%]"><Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" v-bind="getAOSAttributes({ type: 'fade'})"/></div>
+      <div class="md:w-[50%]"><Media imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" v-bind="getAOSAttributes({ type: 'fade'})"/></div>
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import Image from "../components/Image.vue";
 import { getAOSAttributes } from "../utils/animation.js";
 import Loader from "../components/Loader.vue";
 
