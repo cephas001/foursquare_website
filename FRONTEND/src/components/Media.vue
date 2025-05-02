@@ -4,7 +4,7 @@
         <img 
             :src="imageSrc" 
             loading="lazy"
-            :class="finalClassList"
+            :class="finalClassList()"
             @load="isLoaded = true"
             v-if="videoSrc == ''"
             :alt   
@@ -16,7 +16,7 @@
             muted
             loop
             loading="lazy" 
-            :class="finalClassList" 
+            :class="finalClassList()" 
             @canplay="isLoaded = true" 
             v-if="videoSrc !== ''"
         >
@@ -52,7 +52,7 @@ const props = defineProps({
 });
 
 const finalClassList = () => {
-    return `${isLoaded ? 'opacity-100' : 'opacity-0'} ${props.classList} transition-opacity duration-700 object-cover`
+    return `${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700 object-cover ${props.classList}`
 } 
 </script>
   

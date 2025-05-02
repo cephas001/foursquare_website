@@ -89,12 +89,9 @@
           <label>Message</label>
           <textarea placeholder="please type your message here..." class="resize-none mt-2 w-full border-gray-200 h-[150px]" ></textarea>
         </div>
-        <a href="#" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800" v-bind="getAOSAttributes({ type: 'fade' })">
-          Submit
-        </a> 
+        <NonRouteSmallButton text="Submit" classList="mt-4" v-bind="getAOSAttributes({ type: 'fade' })" />
       </form>
     </div>
-    
   </section>
 </template>
 

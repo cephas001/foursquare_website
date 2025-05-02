@@ -34,8 +34,14 @@
     </div>
     <div class="mt-7 flex flex-col md:flex-row md:items-center gap-5">
       <div class="mb-5 md:w-[50%]">
-        <div v-for="(aboutPart, index) in aboutInformation" :key="aboutPart.id" >
-          <h1 :class="[aboutPart.show ? 'border-b-gray-400 border-b-1' : 'border-b-transparent transition-all ease-in-out', 'my-5 flex items-center text-lg pb-2 uppercase tracking-widest cursor-pointer']" @click="aboutPart.show = !aboutPart.show">
+        <div 
+          v-for="(aboutPart, index) in aboutInformation" 
+          :key="aboutPart.id"
+        >
+          <h1 
+            :class="[aboutPart.show ? 'border-b-gray-400 border-b-1' : 'border-b-transparent transition-all ease-in-out', 'my-5 flex items-center text-lg pb-2 uppercase tracking-widest cursor-pointer']" 
+            @click="aboutPart.show = !aboutPart.show"
+          >
             <FontAwesomeIcon
               :icon="['fas', 'caret-right']"
               :class="[aboutPart.show ? 'rotate-90' : '']"
@@ -45,9 +51,7 @@
           </h1>
           <p class="my-3 flex flex-col" v-if="aboutPart.show">
             {{ aboutPart.body }}
-            <a :href="aboutPart.externalLink" target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 mt-1" v-bind="getAOSAttributes({ type: 'fade-in' })">
-                Learn More
-              </a> 
+            <NonRouteSmallButton text="Learn More" classList="w-fit mt-1" v-bind="getAOSAttributes({ type: 'fade-in' })" @click="redirectNewTab(aboutPart.externalLink)"/>
           </p>
         </div>
       </div>
@@ -59,6 +63,7 @@
 <script setup>
 import { ref } from "vue";
 import { getAOSAttributes } from "../utils/animation.js";
+import { redirectNewTab } from "../utils/windows.js";
 import Loader from "../components/Loader.vue";
 
 const iframeLoaded = ref(false);

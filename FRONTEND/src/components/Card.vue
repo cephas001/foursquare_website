@@ -5,15 +5,15 @@
 	    <h5 class="mb-2 text-2xl tracking-tight"><span class="font-winky font-bold text-3xl">Join Us</span> <br /><i>for {{ Activity }}</i></h5>
 	    <p class="mb-3">{{ Description }}</p>
       <div class="flex gap-1">
-        <SmallCustomButton :link="LiveLink" text="Join Live" />
-        <SmallCustomButton link="/" text="Learn More" />
+        <SmallButton :link="LiveLink" text="Join Live" />
+        <SmallButton link="/" text="Learn More" />
       </div>
 	  </div>
 	</div>
 </template>
 
 <script setup>
-import SmallCustomButton from "./SmallCustomButton.vue";
+import SmallButton from "./SmallButton.vue";
 import { getAOSAttributes } from "../utils/animation.js";
 
 const props = defineProps({

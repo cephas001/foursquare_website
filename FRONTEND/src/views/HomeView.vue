@@ -24,8 +24,12 @@
         every Sunday
       </h1>
       <div class="flex flex-col md:flex-row gap-2 mt-4">
-        <CustomButton text="Plan your visit" link="/contact" />
-        <CustomButton text="Join Online" color="black" background="white" :hasIcon="true" :iconClass="['fas', 'video']" link="#" @click="redirectYoutube" />        
+        <Button text="Plan your visit" link="/contact" classList="text-white" />
+        <NonRouteButton text="Join Online" 
+          classList="text-black border-2 border-black bg-white" 
+          :iconClass="['fas', 'video']" 
+          @click="redirectNewTab(youtubeURL)" 
+        />        
       </div>
     </div>
   </section>
@@ -48,7 +52,12 @@
         of individuals and families from all walks of life. Together, we make up
         a church family that longs to become more like Jesus.
       </p>
-      <CustomButton text="About Us" color="black" background="white" link="/about" v-bind="getAOSAttributes({ type: 'fade-down', delay: 300 })"/>       
+      <Button 
+        text="About Us" 
+        classList="text-black bg-white" 
+        link="/about" 
+        v-bind="getAOSAttributes({ type: 'fade-down', delay: 300 })" 
+      />       
     </div>
   </section>
 
@@ -65,8 +74,8 @@
         </p>
       </div>
       <div class="flex flex-col md:flex-row gap-2" v-bind="getAOSAttributes({ delay: 300 })">
-        <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
-        <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
+        <NonRouteButton text="Previous messages" classList="tracking-wider bg-black text-white" @click="redirectNewTab(youtubeURL)"/>
+        <NonRouteButton text="Watch on-demand" classList="bg-white text-black font-semibold border-2 border-black" @click="redirectNewTab(youtubeURL)" />
       </div>
     </div>
     <div v-bind="getAOSAttributes({ type: 'fade' })" class="mt-4 md:mt-0">
@@ -119,7 +128,7 @@
       <h1 class="mt-3 mb-5 text-3xl font-bold">
         here's what's happening next at <br> FGC Ikate
       </h1>
-      <CustomButton text="Upcoming Events" link="/" />
+      <Button text="Upcoming Events" link="/" classList="text-white tracking-wider" />
     </div>
   </section>
 </template>
@@ -127,13 +136,13 @@
 <script setup>
 import { ref } from "vue";
 import Card from "../components/Card.vue";
-import CustomButton from "../components/CustomButton.vue";
+import Button from "../components/Button.vue";
+import NonRouteButton from "../components/NonRouteButton.vue";
 
 import { getAOSAttributes } from "../utils/animation.js";
+import { redirectNewTab } from "../utils/windows.js";
 
-const redirectYoutube = () => {
-  window.open("https://www.youtube.com/@fgcikate/videos", "_blank");
-}
+const youtubeURL = import.meta.env.VITE_YOUTUBE_URL;
 
 const activities = ref([
   {

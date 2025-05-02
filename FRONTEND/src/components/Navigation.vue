@@ -59,13 +59,13 @@
       <NavLink :link="'/give'" :linkText="'Give'" />
 
       <div class="lg:hidden flex absolute bottom-12 items-center justify-center text-4xl mb-4 w-full">
-        <RouterLink to="/" @click="redirectFacebook">
+        <RouterLink to="/" @click="redirectNewTab(facebookURL)">
           <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer text-fuchsia-950" />
         </RouterLink>
-        <RouterLink to="/" @click="redirectInstagram">
+        <RouterLink to="/" @click="redirectNewTab(instagramURL)">
           <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer text-fuchsia-950" />
         </RouterLink>
-        <RouterLink to="/" @click="redirectYoutube">
+        <RouterLink to="/" @click="redirectNewTab(youtubeURL)">
           <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer text-fuchsia-950" />
         </RouterLink>
       </div>
@@ -74,7 +74,12 @@
 </template>
 
 <script setup>
+const facebookURL = import.meta.env.VITE_FACEBOOK_URL;
+const youtubeURL = import.meta.env.VITE_YOUTUBE_URL;
+const instagramURL = import.meta.env.VITE_INSTAGRAM_URL;
+
 import { useNavBarStore } from "../store/navBarStore";
+import { redirectNewTab } from "../utils/windows.js";
 
 const NavBarStore = useNavBarStore();
 
@@ -92,16 +97,6 @@ const handleClickOutside = (event) => {
    NavBarStore.openMenu = false; // Close the menu
   }
 };
-
-const redirectYoutube = () => {
-  window.open("https://www.youtube.com/@fgcikate/videos", "_blank");
-}
-const redirectInstagram = () => {
-  window.open("https://www.instagram.com/foursquare.ikate/", "_blank");
-}
-const redirectFacebook = () => {
-  window.open("https://www.facebook.com/foursqr.ikate", "_blank");
-}
 
 onMounted(() => {
   document.addEventListener("click", handleClickOutside);
