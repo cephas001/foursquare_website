@@ -9,11 +9,13 @@ import NotFound from "../views/NotFound.vue"
 import AboutPage from "../views/AboutPage.vue";
 import ZoomMeetings from "../views/ZoomMeetings.vue";
 import MeetingThanks from "../views/MeetingThanks.vue";
+import EventsPage from "../views/EventsPage.vue";
 
 const routes = [
   { path: "/", component: HomeView },
   { path: "/contact", component: ContactPage },
   { path: "/leadership", component: LeadershipPage },
+  { path: "/events", component: EventsPage },
   { path: "/gallery", component: ImageGallery },
   { path: "/give", component: GivePage },
   { path: "/about", component: AboutPage },

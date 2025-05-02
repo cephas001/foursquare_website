@@ -1,9 +1,9 @@
 <template>
   <li
-    class="pt-5 lg:pt-0 pb-2 lg:pb-0 pl-2 pr-2 lg:mr-2 flex flex-col items-center cursor-pointer lg:font-light"
+    class="pt-5 lg:pt-0 pb-2 lg:pb-0 pl-2 pr-2 lg:mr-2 flex flex-col items-center cursor-pointer"
   >
     <div class="flex justify-between items-center border-b border-b-gray-400 lg:border-0 w-full">
-      <RouterLink :to="link" :class="[route.path == link ? 'text-purple-500' : '', 'pl-4 pb-1 lg:pl-0 lg:pb-0 transition-colors mr-1 hover:text-purple-500 focus:text-purple-500']">{{ linkText }}</RouterLink>
+      <RouterLink :to="link" :class="[route.path == link ? 'text-fuchsia-950 lg:border-b-fuchsia-950' : '', 'pl-4 pb-1 lg:pl-0 lg:pb-0 transition-all mr-1 lg:text-white hover:text-fuchsia-950 focus:text-fuchsia-950 hover:lg:border-b-fuchsia-950 border-b-2 border-b-transparent']">{{ linkText }}</RouterLink>
       <!-- SHOW PLUS ICON OR CARET ICON IF THERE IS A DROPDOWN -->
       <FontAwesomeIcon
         class="lg:!hidden mr-4 mb-1"

@@ -1,7 +1,7 @@
 <template>
   <HeroSection>
     <template #text>
-      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Banner-1.png')]">
+      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Locator.jpg')]">
         <h1 class="font-bold absolute z-10">we can't wait to meet you!</h1>
       </div>
     </template>

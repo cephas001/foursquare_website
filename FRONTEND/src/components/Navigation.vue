@@ -1,7 +1,7 @@
 <template>
   <nav
-    :class="[NavBarStore.fixNav ? '!py-3 lg:!py-5 fixed z-500 bg-black/50 lg:bg-black' : '']"
-    class="bg-black w-[100%] lg:fixed lg:z-500 text-white top-0 right-0 left-0 flex justify-around px-8 py-7 lg:py-5 items-center"
+    :class="[NavBarStore.fixNav ? '!py-3 lg:!py-10 fixed lg:absolute z-500 bg-black/50 lg:bg-transparent' : '']"
+    class="bg-black lg:bg-transparent w-[100%] lg:absolute lg:z-500 top-0 right-0 left-0 flex justify-around px-8 py-7 lg:py-10 items-center"
   >
     <!-- Logo Container -->
     <RouterLink
@@ -28,7 +28,7 @@
 
     <!-- Navigation Links -->
     <ul
-      class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-hidden transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:text-white lg:w-fit lg:relative lg:justify-around"
+      class="flex flex-col fixed z-200 top-0 right-0 h-[100vh] bg-white text-black text-base lg:text-lg w-[290px] pt-20 overflow-y-hidden transition-all duration-500 ease-in-out transform md:flex-col lg:flex-row lg:translate-x-0 lg:h-fit lg:pt-0 lg:bg-transparent lg:w-fit lg:relative lg:justify-around lg:uppercase"
       :class="[NavBarStore.openMenu ? 'translate-x-0' : 'translate-x-[100%]']"
       @click.self="NavBarStore.openMenu = false"
       ref="menuRef"
@@ -49,6 +49,9 @@
       <!-- CONTACT LINK -->
       <NavLink :link="'/contact'" :linkText="'Contact'" />
       
+      <!-- EVENTS LINK -->
+      <NavLink :link="'/events'" :linkText="'Events'" />
+
       <!-- MEDIA LINK -->
       <NavLink :link="'/gallery'" :linkText="'Gallery'" />
 
@@ -57,13 +60,13 @@
 
       <div class="lg:hidden flex absolute bottom-12 items-center justify-center text-4xl mb-4 w-full">
         <RouterLink to="/" @click="redirectFacebook">
-          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer focus:text-purple-900 text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'facebook']" class="mr-5 cursor-pointer text-fuchsia-950" />
         </RouterLink>
         <RouterLink to="/" @click="redirectInstagram">
-          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer focus:text-purple-900 text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'instagram']" class="mr-5 cursor-pointer text-fuchsia-950" />
         </RouterLink>
         <RouterLink to="/" @click="redirectYoutube">
-          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer focus:text-purple-900 text-purple-900" />
+          <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer text-fuchsia-950" />
         </RouterLink>
       </div>
     </ul>

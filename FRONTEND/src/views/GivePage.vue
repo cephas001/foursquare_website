@@ -1,7 +1,7 @@
 <template>
 	<section class="p-10 lg:pt-30 lg:w-[60%] md:mx-auto">
 		<div v-bind="getAOSAttributes({ type: 'fade' })">
-			<Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
+			<Image imageSrc="src/assets/images/PLACEHOLDER IMAGE.jpeg" classList="rounded-md" />
 		</div>
 	</section>
 	<section class="px-10 pb-10 lg:w-[80%] md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-5">

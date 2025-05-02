@@ -2,7 +2,7 @@
   <HeroSection
   >
     <template #text>
-      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Banner-1.png')]">
+      <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Locator.jpg')]">
         <p class="font-extrabold font-winky tracking-widest absolute z-10 text-6xl">Welcome to <br> FGC Ikate</p>
       </div>
     </template>

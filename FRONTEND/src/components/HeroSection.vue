@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-[70vh] lg:h-[60vh] mt-[-2px] relative"
+    class="h-[70vh] lg:h-[60vh] relative"
   >
     <div class="relative h-full overflow-hidden">
       <slot name="text"></slot>

@@ -3,7 +3,7 @@
   >
     <template #text>
       <div :class="$classStore.heroClass" class="bg-[url('src/assets/images/Locator.jpg')]">
-        <h1 class="font-extrabold tracking-wide absolute z-10">FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
+        <h1 class="font-extrabold tracking-wide absolute z-10 flex flex-col"><span class="font-winky font-light text-2xl tracking-widest">WELCOME</span>FOURSQUARE GOSPEL <br> CHURCH IKATE</h1>
       </div>
     </template>
   </HeroSection>
@@ -52,20 +52,25 @@
     </div>
   </section>
 
-  <section class="text-black py-15 px-10 grid grid-cols-1 text-md md:text-lg">
-    <div class="mb-2 lg:w-1/2 lg:mx-auto" v-bind="getAOSAttributes()">
-      <p class="text-gray-500">Watch</p>
-      <h1 class="my-3 text-4xl font-bold">
-        now you can watch anytime, anywhere.
-      </h1>
-      <p class="text-lg">
-        Relevant, engaging messages that will encourage you wherever you are.
-        Catch up on our previous sermons, or watch us live online at 7:30am!
-      </p>
+  <section class="text-black py-15 px-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-md md:text-lg place-items-center">
+    <div>
+      <div class="mb-2" v-bind="getAOSAttributes()">
+        <p class="text-gray-500">Watch</p>
+        <h1 class="my-3 text-4xl font-bold">
+          now you can watch anytime, anywhere.
+        </h1>
+        <p class="text-lg">
+          Relevant, engaging messages that will encourage you wherever you are.
+          Catch up on our previous sermons, or watch us live online at 7:30am!
+        </p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-2" v-bind="getAOSAttributes({ delay: 300 })">
+        <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
+        <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
+      </div>
     </div>
-    <div class="flex flex-col md:flex-row gap-2 lg:w-1/2 lg:mx-auto" v-bind="getAOSAttributes({ delay: 300 })">
-      <CustomButton text="Previous messages" letterSpacing="wider" link="#" @click="redirectYoutube"/>
-      <CustomButton text="Watch on-demand" background="white" color="black" bold="semibold" link="#" letterSpacing="wider" @click="redirectYoutube" />
+    <div v-bind="getAOSAttributes({ type: 'fade' })">
+      <Image imageSrc="src/assets/images/DSC_0192.jpg" classList="rounded-md" />
     </div>
   </section>
 
@@ -79,7 +84,7 @@
       perPage: 3,
       rewind: true,
       autoplay: false,
-      gap: '1rem',
+      gap: '.5rem',
       pauseOnHover: false,
       breakpoints: {
         1024: { perPage: 3 },
@@ -97,7 +102,8 @@
         :Activity="activity.Activity"
         :Time="activity.Time"
         :ImageURL="activity.Image"
-        :LiveLink="activity.LiveLink"
+        :LiveLink="'/meeting'"
+        :Description="activity.Description"
       />
     </SplideSlide>
   </Splide>
@@ -133,35 +139,27 @@ const redirectYoutube = () => {
 const activities = ref([
   {
     id: 1,
-    Day: "Monday",
     Activity: "Prayer Meeting",
-    Time: "8pm (WAT)",
-    LiveLink: "#",
-    Image: "src/assets/images/4C4EC43E-64A7-4FB8-8C2D-8C1BC2BE1A65-scaled.jpg",
+    Image: "src/assets/images/DSC_0192.jpg",
+    Description: "Thursdays at 7 PM, experience the power of collective prayer. Bring your burdens, lift your voices, and stand together in faith as we seek God's presence. No prayer is too small or too big—let's come before the Lord and see Him move!"
   },
   {
     id: 2,
-    Day: "Wednesday",
     Activity: "Bible Study",
-    Time: "6pm (WAT)",
-    LiveLink: "#",
     Image: "src/assets/images/DSC_0192.jpg",
+    Description: "Wednesdays at 7 PM, dive deeper into God's Word at FGC Ikate! Engage in enriching discussions, discover fresh insights, and strengthen your faith in a welcoming atmosphere. Join us and let Scripture transform your life!"
   },
   {
     id: 3,
-    Day: "Saturday",
     Activity: "Young Poeple Pray",
-    Time: "6pm (WAT)",
-    LiveLink: "#",
-    Image: "src/assets/images/4C4EC43E-64A7-4FB8-8C2D-8C1BC2BE1A65-scaled.jpg",
+    Image: "src/assets/images/DSC_0192.jpg",
+    Description: "Fridays at 6 PM, a gathering where young hearts ignite in passionate prayer! Join us as we lift our voices in worship, seek God's guidance, and strengthen each other in faith. Come and be part of a movement of prayer, purpose, and power!"
   },
   {
     id: 4,
-    Day: "Sunday",
     Activity: "Worship Service",
-    Time: "8am (WAT)",
-    LiveLink: "#",
-    Image: "src/assets/images/DSC_0060.jpg",
+    Image: "src/assets/images/DSC_0192.jpg",
+    Description: "Sundays at 10 AM, encounter God in a vibrant atmosphere of praise and worship. With uplifting music, inspiring messages, and a strong community, this is a time to refuel your spirit and celebrate His goodness! You are always welcome here!"
   },
 ]);
 </script>
