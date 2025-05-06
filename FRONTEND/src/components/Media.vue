@@ -24,7 +24,7 @@
         </video>
 
         <!-- Placeholder Overlay -->
-        <Loader :gradient="true" :isLoaded :classList="classList + 'bg-gradient-to-r from-purple-600 to-purple-300'" />
+        <Loader :gradient="true" :isLoaded :classList="classList + ' bg-gradient-to-r from-purple-600 to-purple-300'" />
     </div>
 </template>
 
