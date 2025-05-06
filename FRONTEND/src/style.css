@@ -12,10 +12,7 @@
 @import '@fontsource-variable/roboto';
 @import '@fontsource-variable/winky-sans';
 
-@plugin "flowbite/plugin";
-@source "../node_modules/flowbite";
-@plugin "flowbite/plugin";
-@source "../node_modules/flowbite-vue";
+@import '@fontsource-variable/montserrat';
 
 @layer base {
     body {
@@ -32,6 +29,10 @@
 
     .font-poppins {
         font-family: 'Poppins', sans-serif;
+    }
+
+    .font-montserrat {
+        font-family: 'Montserrat Variable', sans-serif;
     }
 }
 

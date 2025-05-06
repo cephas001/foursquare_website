@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
+    description: '';
     displayName: 'Event';
     pluralName: 'events';
     singularName: 'event';
@@ -385,11 +386,13 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Date: Schema.Attribute.Date;
     Description: Schema.Attribute.Text;
+    End_Time: Schema.Attribute.Time;
     Image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Start_Time: Schema.Attribute.Time;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

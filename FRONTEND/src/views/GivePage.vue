@@ -30,7 +30,7 @@
         </div>
 	</section>
 
-	<section class="px-10 pb-5 lg:w-[80%] md:mx-auto">
+	<section class="px-10 pb-10 lg:w-[80%] md:mx-auto">
 		<p class="text-gray-600">ongoing projects</p>
 		<div class="grid grid-cols-1">
 			<div v-bind="getAOSAttributes()" class="w-full" v-for="project in projects" :key="project.id">

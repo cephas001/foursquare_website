@@ -136,8 +136,6 @@
 <script setup>
 import { ref } from "vue";
 import Card from "../components/Card.vue";
-import Button from "../components/Button.vue";
-import NonRouteButton from "../components/NonRouteButton.vue";
 
 import { getAOSAttributes } from "../utils/animation.js";
 import { redirectNewTab } from "../utils/windows.js";

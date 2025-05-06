@@ -17,9 +17,9 @@
 
         <div class="lg:ml-5">
           <div class="mt-4 flex flex-row gap-5 text-3xl">
-            <FontAwesomeIcon :icon="['fab', 'facebook']" class="cursor-pointer hover:text-purple-900" />
-            <FontAwesomeIcon :icon="['fab', 'instagram']" class="cursor-pointer hover:text-purple-900" />
-            <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer hover:text-purple-900" />
+            <FontAwesomeIcon :icon="['fab', 'facebook']" class="cursor-pointer hover:text-purple-900" @click="redirectNewTab(facebookURL)" />
+            <FontAwesomeIcon :icon="['fab', 'instagram']" class="cursor-pointer hover:text-purple-900" @click="redirectNewTab(instagramURL)" />
+            <FontAwesomeIcon :icon="['fab', 'youtube']" class="cursor-pointer hover:text-purple-900" @click="redirectNewTab(youtubeURL)" />
           </div>
           <div class="mt-4">
               <h2 class="mb-1 font-bold text-purple-900 uppercase">Quick Links</h2>
@@ -54,7 +54,12 @@
 </template>
   
 <script setup>
-  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   import { RouterLink } from "vue-router";
+  import { redirectNewTab } from "../utils/windows.js";
+
+  const facebookURL = import.meta.env.VITE_FACEBOOK_URL;
+  const youtubeURL = import.meta.env.VITE_YOUTUBE_URL;
+  const instagramURL = import.meta.env.VITE_INSTAGRAM_URL;
+
 </script>
   

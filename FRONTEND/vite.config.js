@@ -6,6 +6,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
   server: {
-    allowedHosts: ["smooth-ideas-tell.loca.lt"] // Add your Testing URL here
+    allowedHosts: [] // Add your Testing URL here
   }
 });

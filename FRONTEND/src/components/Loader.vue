@@ -1,5 +1,5 @@
 <template>
-    <div :class="[!isLoaded ? 'opacity-100' : 'opacity-0', `flex space-x-1 items-center justify-center object-cover text-black h-full w-full absolute inset-0 bg-gray-200 ${gradient ? 'bg-gradient-to-r from-purple-600 to-purple-300' : '' }`]">
+    <div :class="[!isLoaded ? 'opacity-100' : 'opacity-0', `flex space-x-1 items-center justify-center object-cover text-black h-full w-full absolute inset-0 bg-gray-200 ${classList}`]">
         <FontAwesomeIcon
             :icon="['fas', 'circle']"
             class="bounce-fast bounce-delay-1 text-xl"
@@ -24,6 +24,10 @@ const props = defineProps({
     }, 
     gradient: {
         type: Boolean, 
+    }, 
+    classList: {
+        type: String, 
+        default: ""
     }
 })
 </script>
