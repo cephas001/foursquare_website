@@ -12,24 +12,37 @@ import MeetingThanks from "../views/MeetingThanks.vue";
 import EventsPage from "../views/EventsPage.vue";
 
 const routes = [
-  { path: "/", component: HomeView },
-  { path: "/contact", component: ContactPage },
-  { path: "/leadership", component: LeadershipPage },
-  { path: "/events", component: EventsPage },
-  { path: "/gallery", component: ImageGallery },
-  { path: "/give", component: GivePage },
-  { path: "/about", component: AboutPage },
-  { path: "/meeting", component: ZoomMeetings },
-  { path: "/meeting_thanks", component: MeetingThanks},
-  { path: "/:pathMatch(.*)*", component: NotFound}
+  {
+    path: "/", 
+    children: [
+      { path: "", component: HomeView },
+      { path: "contact", component: ContactPage },
+      { path: "leadership", component: LeadershipPage },
+      { path: "events", component: EventsPage },
+      { path: "gallery", component: ImageGallery },
+      { path: "give", component: GivePage },
+      { path: "about", component: AboutPage },
+    ]
+  }, 
+  {
+    path: "/blank", 
+    children: [
+      { path: "meeting", component: ZoomMeetings },
+      { path: "meeting_thanks", component: MeetingThanks },
+    ]
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    children: [
+      { path: "", component: NotFound } // Not Found page inside BlankLayout
+    ]
+  }
 ];
 
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior() {
     return { top: 0 };
   }
 });
-
-export default router;

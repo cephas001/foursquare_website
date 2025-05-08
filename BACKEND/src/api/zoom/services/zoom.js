@@ -20,5 +20,17 @@ module.exports = {
         // Generate the JWT signature
         const signature = jwt.sign(payload, sdkSecret, { algorithm: "HS256"});
         return signature;
+    }, 
+    async fetchMeetingDetails(meetingId) {
+        const response = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+            method: "GET", 
+            headers: {
+                Authorization: `Bearer ${process.env.ZOOM_SDK_SECRET}`, 
+                "Content-Type": "application/json"
+            }
+        });
+
+        const data = await response.json();
+        return data;
     }
 };

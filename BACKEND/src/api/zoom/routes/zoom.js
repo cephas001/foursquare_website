@@ -8,6 +8,15 @@ module.exports = {
                 policies: [],
                 auth: false
             }
-        }
+        }, 
+        {
+            method: 'GET',
+            path: '/getMeetingDetails/:id',
+            handler: 'zoom.checkMeetingStatus',
+            config: {
+                policies: [],
+                auth: false
+            }
+        }, 
     ]
 }

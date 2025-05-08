@@ -57,21 +57,21 @@
         <div>
           <label>Name</label>
           <div class="my-2">
-            <input type="text" class="w-full border-gray-200">
+            <input type="text" class="w-full border-gray-200 border-1 p-2">
             <p class="mt-1 text-sm text-black/70 tracking-wider">First</p>  
           </div>
           <div class="my-2">
-            <input type="text" class="w-full border-gray-200">
+            <input type="text" class="w-full border-gray-200 p-2 border-1">
             <p class="mt-1 text-sm text-black/70 tracking-wider">Last</p>  
           </div>
         </div>
         <div class="mt-4">
           <label>Email</label>
-          <input type="text" class="mt-2 w-full border-gray-200">
+          <input type="text" class="mt-2 w-full border-gray-200 p-2 border-1">
         </div>
         <div class="mt-4 flex flex-col">
           <label>Are you visiting or just reaching out?</label>
-          <select class="mt-2 border-gray-200 text-sm" v-model="selected" @change="displayAccordingly">
+          <select class="mt-2 border-gray-200 text-sm p-2 border-1" v-model="selected" @change="displayAccordingly">
             <option disabled selected>Select</option>
             <option>Visiting</option>
             <option>Reaching out</option>
@@ -79,15 +79,15 @@
         </div>
         <div class="mt-4 flex flex-col" v-if="visiting">
           <label>When will you be visiting?</label>
-          <input type="date" class="mt-2 text-sm w-fit border-gray-200">
+          <input type="date" class="mt-2 text-sm w-fit border-gray-200 p-2 border-1">
         </div>
         <div class="mt-4 flex flex-col" v-if="visiting">
           <label>Will anybody be coming with you?</label>
-          <input type="text" class="mt-2 w-full border-gray-200">
+          <input type="text" class="mt-2 w-full border-gray-200 p-2 border-1">
         </div>
         <div class="mt-4 flex flex-col" v-if="reachingOut">
           <label>Message</label>
-          <textarea placeholder="please type your message here..." class="resize-none mt-2 w-full border-gray-200 h-[150px]" ></textarea>
+          <textarea placeholder="please type your message here..." class="resize-none mt-2 w-full border-gray-200 p-2 border-1 h-[150px]" ></textarea>
         </div>
         <NonRouteSmallButton text="Submit" classList="mt-4" v-bind="getAOSAttributes({ type: 'fade' })" />
       </form>

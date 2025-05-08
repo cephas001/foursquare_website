@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 module.exports = {
     async getSignature(ctx) {
         try {
@@ -10,6 +12,18 @@ module.exports = {
             ctx.send({ signature })
         } catch(error) {
             ctx.throw(500, "Failed to generate Zoom SDK signature");
+        }
+    },
+    async checkMeetingStatus(ctx) {
+        try {
+            const { meetingId } = ctx.params;
+
+            const data = await strapi.service('api::zoom.zoom').fetchMeetingDetails(meetingId);
+            
+            ctx.send(data);
+        } catch (error) {
+            console.log("Zoom API Error", error);
+            ctx.throw(500, "Failed to fetch meeting details");
         }
     }
 };

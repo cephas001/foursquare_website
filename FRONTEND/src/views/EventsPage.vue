@@ -26,7 +26,7 @@
         <Loader :isLoaded="fetchedEvents" />
     </section>
 
-    <section class="p-10 font-montserrat" v-if="event !== null">
+    <section class="p-10 font-montserrat lg:w-[90%] lg:mx-auto" v-if="event !== null">
         <NonRouteButton text="Back to events" classList="text-black border-2 border-black bg-white mb-4" :iconClass="['fas', 'fa-arrow-left']" @click="closeEvent" />
         <div>
             <Media :imageSrc="url + event.Image.url" :alt="event.Title + 'Image'" classList="rounded-md" />

@@ -1,16 +1,15 @@
 <template>
-	<section class="pt-20 lg:pt-40 px-10 pb-20 md:pb-10 min-h-[1vh] text-center md:w-[70%] md:mx-auto">
-		<h1 class="text-4xl tracking-wider leading-[1.5] lg:text-5xl mb-2 flex flex-col">
-			<FontAwesomeIcon
-				class="text-purple-700 text-5xl animate-bounce"
-        		:icon="['fas', 'exclamation-triangle']"
-      		/>
-			Sorry, the page you are looking for does not exist.
+	<section class="text-center flex flex-col items-center justify-center h-[100vh] bg-purple-500 px-5">
+		<h1 class="font-bold text-9xl">
+			404
 		</h1>
-		<SmallButton text="HOME" link="/" />
-	</section>
+		<h1 class="text-xl lg:text-2xl">
+			The page you are looking for does not exist. <br> Find your way back.
+		</h1>
+		<Button text="COME BACK HOME" classList="text-purple-100 mt-2 lg:text-xl" link="/" />
+	</section> 
 </template>
 
 <script setup>
-	import SmallButton from "../components/SmallButton.vue";
+	import Button from "../components/Button.vue";
 </script>
