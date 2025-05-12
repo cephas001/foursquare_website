@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 module.exports = {
     async getSignature(ctx) {
         try {
@@ -14,16 +12,43 @@ module.exports = {
             ctx.throw(500, "Failed to generate Zoom SDK signature");
         }
     },
-    async checkMeetingStatus(ctx) {
+    async zoomWebhook(ctx) {
         try {
-            const { meetingId } = ctx.params;
+            const { event, payload } = ctx.request.body;
+            const meetingId = payload.object.id;
+            console.log(event, payload);
 
-            const data = await strapi.service('api::zoom.zoom').fetchMeetingDetails(meetingId);
-            
-            ctx.send(data);
+            if (event === "meeting.started") {
+                await strapi.service('api::zoom.zoom').updateMeetingStatus(meetingId, true);
+            } else if (event === "meeting.ended") {
+                await strapi.service('api::zoom.zoom').updateMeetingStatus(meetingId, false);
+            }
+        
+            ctx.send({ success: true, message: "Webhook processed successfully" });
         } catch (error) {
-            console.log("Zoom API Error", error);
-            ctx.throw(500, "Failed to fetch meeting details");
+            ctx.send({ error: error.message });
+        }
+    },
+    async getMeetingStatus(ctx) {
+        try {
+          const { meetingId } = ctx.params;
+          const meetingStarted = await strapi.service('api::zoom.zoom').getMeetingStatus(meetingId);
+    
+          ctx.send({ meetingStarted });
+        } catch (error) {
+          ctx.send({ error: error.message });
         }
     }
+    // async checkMeetingStatus(ctx) {
+    //     try {
+    //         const { meetingId } = ctx.params;
+
+    //         const data = await strapi.service('api::zoom.zoom').fetchMeetingDetails(meetingId);
+            
+    //         ctx.send(data);
+    //     } catch (error) {
+    //         console.log("Zoom API Error", error);
+    //         ctx.throw(500, "Failed to fetch meeting details");
+    //     }
+    // }
 };

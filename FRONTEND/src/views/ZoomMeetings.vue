@@ -11,9 +11,9 @@ const meetingNumber = ref("8254066675");
 const role = ref(0);
 const userName = ref("Web User" + Date.now().toString());
 
-const fetchMeetingDetails = async () => {
+const fetchMeetingStatus = async () => {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/getMeetingDetails/${meetingNumber.value}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/meeting-status/${meetingNumber.value}`);
         const data = await response.data;
 
         console.log(data);
@@ -74,6 +74,6 @@ onMounted(() => {
     ZoomMtg.preLoadWasm();
     ZoomMtg.prepareWebSDK();
     // joinMeeting();
-    fetchMeetingDetails();
+    fetchMeetingStatus();
 }); 
 </script>

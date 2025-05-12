@@ -10,13 +10,20 @@ module.exports = {
             }
         }, 
         {
-            method: 'GET',
-            path: '/getMeetingDetails/:id',
-            handler: 'zoom.checkMeetingStatus',
+            method: "GET",
+            path: "/meeting-status/:meetingId",
+            handler: "zoom.getMeetingStatus",
             config: {
-                policies: [],
-                auth: false
-            }
-        }, 
+              auth: false,
+            },
+        },
+        {
+            method: "POST",
+            path: "/zoom-webhook",
+            handler: "zoom.zoomWebhook",
+            config: {
+              auth: false,
+            },
+          },
     ]
 }
