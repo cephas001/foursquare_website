@@ -21,6 +21,7 @@
     "@splidejs/vue-splide": "^0.6.12",
     "@tailwindcss/vite": "^4.0.17",
     "@zoom/meetingsdk": "^3.13.1",
+    "aos": "^2.3.4",
     "axios": "^1.8.4",
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.0",
