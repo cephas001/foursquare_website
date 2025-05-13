@@ -22,12 +22,12 @@ const routes = [
       { path: "gallery", component: ImageGallery },
       { path: "give", component: GivePage },
       { path: "about", component: AboutPage },
+      { path: "meeting/:id", component: ZoomMeetings },
     ]
   }, 
   {
     path: "/blank", 
     children: [
-      { path: "meeting", component: ZoomMeetings },
       { path: "meeting_thanks", component: MeetingThanks },
     ]
   },

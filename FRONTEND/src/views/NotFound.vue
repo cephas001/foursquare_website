@@ -9,7 +9,3 @@
 		<Button text="COME BACK HOME" classList="text-purple-100 mt-2 lg:text-xl" link="/" />
 	</section> 
 </template>
-
-<script setup>
-	import Button from "../components/Button.vue";
-</script>
